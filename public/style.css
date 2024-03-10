@@ -5,151 +5,203 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+body,
+html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
     color: #333;
-    background-color: #f4f4f4;
-    font-size: 18px;
+    overflow: hidden;
+    /* Prevents scrolling */
 }
 
-/* Layout and Flexbox */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
-}
-
-.header, .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Header Styles */
+header {
+    background: #000;
+    color: #fff;
     padding: 20px 0;
-    background-color: #000;
-    color: #fff;
+    text-align: center;
 }
 
-/* Nav & Logo */
-nav {
+.header-container h1.title {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* Main Content Area */
+main {
+    display: flex;
+    height: calc(100vh - 40px);
+    /* Footer height is 40px, adjust if it changes */
+    overflow: hidden;
+    /* Prevent scrolling within the main content */
+}
+
+/* Slider Section */
+#slider {
+    display: flex;
+    width: 100%;
+}
+
+/* Slider Controls */
+.slider-controls {
+    flex-basis: 10%;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider-controls button,
+.dots-container .dot {
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    /* Ensuring circle shape */
+    height: 40px;
+}
+
+.dots-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.dots-container .dot {
+    background-color: transparent;
+    border: 2px solid #007bff;
+    opacity: 0.5;
+}
+
+.dots-container .dot.active {
+    opacity: 1;
+}
+
+/* Slider Container */
+.slider-container {
+    flex-grow: 9;
     display: flex;
     align-items: center;
+    /* Center slides vertically */
 }
 
-.logo {
-    color: #040036;
-    font-weight: bold;
-    font-size: 24px;
-}
-
-/* Hero Section */
-#hero {
-    background-image: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.5)), url('images/hero-bg1.svg');
-    color: #fff;
+.slide {
+    display: none;
+    width: 100%;
+    height: calc(100% - 0px);
+    /* Adjust for footer */
     background-size: cover;
     background-position: center;
-    padding: 100px 0;
-    text-align: center;
+    position: relative;
 }
 
-#hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.slide h1,
+.slide h2,
+.slide p,
+.slide div {
+    margin-top: 0;
+    /* Adjust or remove margins as needed */
 }
 
-/* About & Services */
-#about, #services, #values {
-    padding: 50px 0;
+.slide.active {
+    display: block;
 }
 
-h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-p, ol {
-    margin-bottom: 20px;
-}
-
-/* Contact Form */
-#contact {
-    background-color: #fff;
-    padding: 50px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-iframe {
-    width: 100%;
-    min-height: 300px;
-    border: none;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
+/* Slide Text */
+.slide-text {
+    position: absolute;
     padding: 20px;
-    background: linear-gradient(#885df1, #9198e5);
+    background-color: rgba(0, 0, 0, 0);
+    color: #fdfdfd;
+    font-family: 'Arial', sans-serif;
+    font-size: 5.5rem;
+    font-weight: 300;
+    border-radius: 2px;
+    max-width: 90%;
+    word-wrap: break-word;
+    text-align: left;
+    text-shadow: 2px 3px 3px rgba(255, 255, 255, 4.5);
+    line-height: 1;
 }
 
-/* Responsive Images */
-img {
-    max-width: 100%;
-    height: auto;
+#slide-1 .slide-text {
+    top: 75px;
+    left: 135px;
 }
 
-/* Buttons and Links */
-a {
-    color: #885df1;
-    text-decoration: none;
+#slide-2 .slide-text {
+    top: 0;
+    right: 35px;
 }
 
-a:hover {
-    color: #9198e5;
+#slide-3 .slide-text {
+    bottom: 60px;
+    left: 75px;
 }
 
-button {
-    background-color: #885df1;
-    color: #fff;
+/* Adjust for footer */
+#slide-4 .slide-text {
+    bottom: 60px;
+    right: 0;
+}
+
+/* Adjust for footer */
+
+#slide-4 iframe {
+    width: 100%;
+    /* Full width of the slide */
+    height: 100%;
+    /* Full height of the slide */
     border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 200ms ease;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-button:hover {
-    background-color: #9198e5;
+/* Footer Styles */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.8em;
+    z-index: 1000;
+    /* Ensures the footer is above all content */
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 900px) {
-    .hero h1 {
-        font-size: 2rem;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+
+    .slider-controls button,
+    .dots-container .dot {
+        padding: 5px;
+        width: 30px;
+        height: 30px;
     }
 
-    nav, .header {
-        flex-direction: column;
+    .slide-text {
+        position: static;
+        /* Default static positioning */
+        display: block;
+        /* Ensure the text is a block element */
+        width: 100%;
+        /* Full width of the slide */
+        margin: 10px 0;
+        /* Add some space between stacked texts */
+        font-size: 1.5rem;
+        /* Slightly smaller text on mobile devices */
+        padding: 15px;
+        /* Adjust padding as needed */
     }
 }
-
-/* Utilizing CSS Variables for Easy Theme Adjustments */
-:root {
-    --primary-color: #885df1;
-    --secondary-color: #9198e5;
-    --background-color: #f4f4f4;
-    --text-color: #333;
-}
-
-/* Applying CSS Variables */
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-.header, .footer {
-    background-color: var(--primary-color);
-}
-
-a, button {
-    color: var(--secondary-color);
-}
-

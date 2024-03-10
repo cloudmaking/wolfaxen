@@ -3,55 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOLFAXEN ┃ NEXAFLOW</title>
-    <!-- Link to CSS file -->
+    <title>NexaFlow | Wolfaxen - Streamline Your Operations</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header with Title -->
     <header>
-        <nav>
-            <div class="logo">WOLFAXEN ┃ NEXAFLOW</div>
-        </nav>
+        <div class="header-container">
+            <h1 class="title">NEXAFLOW | WOLFAXEN</h1>
+        </div>
     </header>
-    
+
+    <!-- Main Content Area -->
     <main>
-        <section id="hero">
-            <h1>Welcome to NexaFlow</h1>
-            <p>Your partner in fostering a growth and self-improvement mindset through data-driven insights.</p>
-        </section>
-        
-        <section id="about">
-            <h2>About Us</h2>
-            <p>NexaFlow is a pioneering Documentation-Guided Internal Audit Agency dedicated to helping organizations develop a robust growth and self-improvement mindset. With our in-depth audits, we enable companies to enhance efficiency and embrace a self-improvement culture.</p>
-            <p>Founded on the vision of a world where businesses can thrive while being righteous and beneficial to society, we stand apart through our commitment to innovative solutions that enable our clients to contribute positively to the world.</p>
-        </section>
-        
-        <section id="services">
-            <h2>Our Services</h2>
-            <p>Our unique approach unfolds in three key stages:</p>
-            <ol>
-                <li><strong>Documentation:</strong> Comprehensive analysis of organizational systems, technology use, HR, recruitment, and strategy.</li>
-                <li><strong>Data Analysis:</strong> Creation of invaluable resources from our in-depth analysis, enabling positive organizational changes.</li>
-                <li><strong>Consulting:</strong> Detailed sessions providing insights, advice, and actionable solutions tailored to your specific needs.</li>
-            </ol>
-            <p>Explore our customizable service packages designed to offer you the flexibility to address your unique challenges.</p>
-        </section>
-        
-        <section id="values">
-            <h2>Our Values</h2>
-            <p>Integrity, Collaboration, and Innovation form the cornerstone of NexaFlow. We are committed to fostering an environment where businesses not only aim for profit but also for a positive social impact, environmental sustainability, and the well-being of their teams.</p>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Interested in transforming your organization with NexaFlow? Fill out our form to start the conversation.</p>
-            <!-- Embed your Google Form here -->
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSesKo1z1PAgM9gSZI1PIcCLpVG8fXsDBqc7UQz-FNFR9mHo7Q/viewform?embedded=true" width="640" height="856" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <section id="slider">
+            <!-- Slider Controls -->
+            <div class="slider-controls">
+                <button class="prev-slide">&#10094;</button>
+                <!-- Dots will be added dynamically with JavaScript -->
+                <div class="dots-container"></div>
+                <button class="next-slide">&#10095;</button>
+            </div>
+
+            <!-- Slider Container -->
+            <div class="slider-container">
+                <div class="slide active" id="slide-1" style="background-image: url('images/scbg11.png');">
+                    <p class="slide-text top-left">
+                        Documentation Lead Internal Audits
+                    </p>
+                </div>
+                <div class="slide" id="slide-2" style="background-image: url('images/scbg10.jpg');">
+                    <p class="slide-text top-right">
+                        <br> Workflows
+                        <br> Procedures
+                        <br> Training
+                        <br> Moral
+                    </p>
+                </div>
+                <div class="slide" id="slide-3" style="background-image: url('images/scbg7.jpg');">
+                    <p class="slide-text bottom-left">
+                        Empower a Growth Mindset
+                    </p>
+                </div>
+                <div class="slide" id="slide-4" style="background-image: url('');">
+                    <!-- Embed Google Form in the last slide -->
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSesKo1z1PAgM9gSZI1PIcCLpVG8fXsDBqc7UQz-FNFR9mHo7Q/viewform?usp=sf_link" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>
+            </div>
         </section>
     </main>
-    
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2023 NexaFlow. Empowering Organizations for a Better Tomorrow.</p>
+        <p>&copy; 2023 NexaFlow | Wolfaxen. Empowering Organizations for a Better Tomorrow.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
