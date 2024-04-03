@@ -1,57 +1,50 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.slide');
-    const nextButton = document.querySelector('.next-slide');
-    const prevButton = document.querySelector('.prev-slide');
-    const dotsContainer = document.querySelector('.dots-container');
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Get all slides and control buttons
+    const slides = document.querySelectorAll('.slide-bg-1, .slide-bg-2, .slide-bg-3');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+
+    // Current slide tracker
     let currentSlide = 0;
 
-    // Initialize dots for navigation
-    function initDots() {
-        slides.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            dot.addEventListener('click', () => changeSlide(index));
-            dotsContainer.appendChild(dot);
+    // Function to go to a specific slide
+    function goToSlide(slideIndex) {
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('hidden', index !== slideIndex);
         });
-    }
-
-    // Update which dot is active
-    function updateDots() {
-        const dots = document.querySelectorAll('.dots-container .dot');
-        dots.forEach((dot, index) => {
-            if (index === currentSlide) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-    }
-
-    // Function to change slide
-    function changeSlide(slideIndex) {
-        slides.forEach((slide) => {
-            slide.classList.remove('active');
-            slide.style.display = 'none';
-        });
-        slides[slideIndex].classList.add('active');
-        slides[slideIndex].style.display = 'block';
-
         currentSlide = slideIndex;
-        updateDots();
     }
 
-    // Event listeners for next and previous buttons
-    nextButton.addEventListener('click', () => {
-        let newIndex = currentSlide + 1 < slides.length ? currentSlide + 1 : 0;
-        changeSlide(newIndex);
-    });
+    // Show the first slide initially
+    goToSlide(0);
 
+    // Event listeners for previous and next buttons
     prevButton.addEventListener('click', () => {
-        let newIndex = currentSlide - 1 >= 0 ? currentSlide - 1 : slides.length - 1;
-        changeSlide(newIndex);
+        stopAutoScroll(); // Stop auto-scroll when user clicks button
+        goToSlide(currentSlide - 1 < 0 ? slides.length - 1 : currentSlide - 1);
+        startAutoScroll(); // Restart auto-scroll after action
     });
 
-    // Initialize the slider and dots on load
-    initDots();
-    changeSlide(currentSlide); // Start with the first slide
+    nextButton.addEventListener('click', () => {
+        stopAutoScroll(); // Stop auto-scroll when user clicks button
+        goToSlide((currentSlide + 1) % slides.length);
+        startAutoScroll(); // Restart auto-scroll after action
+    });
+
+    // Auto-scroll functionality
+    let autoScrollInterval;
+
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(() => {
+            let nextSlide = (currentSlide + 1) % slides.length;
+            goToSlide(nextSlide);
+        }, 5000); // Change slides every 5000ms (5 seconds)
+    }
+
+    function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+    }
+
+    // Start the auto-scrolling
+    startAutoScroll();
 });

@@ -1,65 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NexaFlow | Wolfaxen - Streamline Your Operations</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Background images */
+        .slide-bg-1 {
+            background-image: url('images/scbg33.jpg');
+        }
+
+        .slide-bg-2 {
+            background-image: url('images/scbg13.png');
+        }
+
+        .slide-bg-3 {
+            background-image: url('images/slide3.jpg');
+        }
+
+        /* Add more as needed */
+
+        .text-shadow {
+                        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+                    }
+    </style>
 </head>
-<body>
+
+<body class="flex flex-col min-h-screen bg-black text-white">
+
     <!-- Header with Title -->
-    <header>
-        <div class="header-container">
-            <h1 class="title">NEXAFLOW | WOLFAXEN</h1>
-        </div>
+    <header class="bg-opacity-80 bg-black text-center py-3 md:py-4 lg:py-6 z-10">
+        <h1 class="text-1xl md:text-2xl lg:text-3xl font-bold uppercase tracking-widest">NexaFlow | Wolfaxen</h1>
     </header>
 
     <!-- Main Content Area -->
-    <main>
-        <section id="slider">
-            <!-- Slider Controls -->
-            <div class="slider-controls">
-                <button class="prev-slide">&#10094;</button>
-                <!-- Dots will be added dynamically with JavaScript -->
-                <div class="dots-container"></div>
-                <button class="next-slide">&#10095;</button>
+    <main class="flex-grow relative">
+        <!-- Slider Controls -->
+        <div class="absolute inset-x-0 bottom-10 md:bottom-20 flex justify-between px-4 md:px-8 z-20">
+            <button id="prevButton"
+                class="text-2xl md:text-3xl lg:text-4xl text-blue-500 hover:text-blue-400">&#10094;</button>
+            <button id="nextButton"
+                class="text-2xl md:text-3xl lg:text-4xl text-blue-500 hover:text-blue-400">&#10095;</button>
+        </div>
+
+        <!-- Slides -->
+        <div class="absolute inset-0 z-0">
+            <!-- Slide 1 Content and Background -->
+            <div class="slide-bg-1 w-full h-full bg-cover bg-center z-10 flex items-center justify-center">
+                <div class="text-center max-w-2xl mx-auto">
+                    <p class="text-4xl md:text-7xl lg:text-9xl font-light leading-none text-shadow">
+                        Internal Audits
+                    </p>
+                    <p class="mt-4 text-xl md:text-2xl text-shadow">Streamline your workflows and enhance productivity.</p><br><br>
+                    <a href="/contactus"
+                        class="mt-8 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Contact
+                        Us</a>
+                </div>
+
             </div>
 
-            <!-- Slider Container -->
-            <div class="slider-container">
-                <div class="slide active" id="slide-1" style="background-image: url('images/scbg11.png');">
-                    <p class="slide-text top-left">
-                        Documentation Lead Internal Audits
+            <!-- Slide 2 Content and Background -->
+            <div class="slide-bg-2 w-full h-full bg-cover bg-center z-10 hidden flex items-center justify-center">
+                <div class="text-center max-w-2xl mx-auto">
+                    <p class="text-4xl md:text-7xl lg:text-9xl font-light leading-none text-shadow">
+                        Streamline<br>Operations
                     </p>
-                </div>
-                <div class="slide" id="slide-2" style="background-image: url('images/scbg10.jpg');">
-                    <p class="slide-text top-right">
-                        <br> Workflows
-                        <br> Procedures
-                        <br> Training
-                        <br> Moral
-                    </p>
-                </div>
-                <div class="slide" id="slide-3" style="background-image: url('images/scbg7.jpg');">
-                    <p class="slide-text bottom-left">
-                        Empower a Growth Mindset
-                    </p>
-                </div>
-                <div class="slide" id="slide-4" style="background-image: url('');">
-                    <!-- Embed Google Form in the last slide -->
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSesKo1z1PAgM9gSZI1PIcCLpVG8fXsDBqc7UQz-FNFR9mHo7Q/viewform?usp=sf_link" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    <p class="mt-4 text-xl md:text-2xl text-shadow ">Automate your processes and reduce manual errors.</p>
+                    <br><br><a href="/contactus"
+                        class="mt-8 bg-red-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Contact
+                        Us</a>
                 </div>
             </div>
-        </section>
+
+            <!-- Slide 3 Content and Background -->
+            <div class="slide-bg-3 w-full h-full bg-cover bg-center z-10 hidden flex items-center justify-center">
+                <div class="text-center max-w-2xl mx-auto">
+                    <p class="text-4xl md:text-7xl lg:text-9xl font-light leading-none text-shadow">
+                        Enhance<br>Collaboration
+                    </p>
+                    <p class="mt-4 text-xl md:text-2xl text-shadow">Connect your teams and improve communication.</p>
+                    <br><br><a href="/contactus"
+                        class="mt-8 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Contact
+                        Us</a>
+                </div>
+            </div>
+            <!-- Add more slides and content as needed -->
+        </div>
+
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2023 NexaFlow | Wolfaxen. Empowering Organizations for a Better Tomorrow.</p>
+    <footer class="bg-opacity-80 bg-black text-center py-1 md:py-2 z-10">
+        &copy; 2023 NexaFlow | Wolfaxen. Empowering Organizations for a Better Tomorrow.
     </footer>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
+    <!-- Include the JavaScript file for the slider functionality -->
+    <script src="script.js" defer></script>
+
 </body>
+
 </html>
