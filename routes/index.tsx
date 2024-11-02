@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
 import { Head } from "$fresh/runtime.ts";
 import { useEffect } from "preact/hooks";
 
