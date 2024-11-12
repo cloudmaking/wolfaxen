@@ -1,4 +1,5 @@
 import { Head } from "$fresh/runtime.ts";
+import FormIsland from "../islands/FormIsland.tsx";
 
 export default function ContactUs() {
     return (
@@ -99,6 +100,17 @@ export default function ContactUs() {
                                 <span class="text-gray-800">London, UK</span>
                             </p>
                         </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-3xl font-semibold text-gray-800 mb-6">
+                            Get in Touch
+                        </h2>
+                        <p class="text-gray-600 mb-8 text-center max-w-2xl">
+                            We'd love to hear from you! Please reach out to us
+                            using the contact form below.
+                        </p>
+                        <FormIsland />{" "}
+                        {/* Embedding the FormIsland component */}
                     </div>
                 </main>
 
