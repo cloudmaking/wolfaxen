@@ -71,7 +71,7 @@ function isValidMessage(data: unknown): boolean {
 }
 
 // Cleanup old rate limit entries periodically
-setInterval(() => {
+const cleanupInterval = setInterval(() => {
   const now = Date.now();
   for (const [ip, tracker] of connectionTracker.entries()) {
     if (now > tracker.resetAt) {
@@ -79,6 +79,11 @@ setInterval(() => {
     }
   }
 }, 60_000);
+
+// Prevent this interval from keeping the process alive (e.g. during build)
+if (typeof Deno !== "undefined") {
+  Deno.unrefTimer(cleanupInterval);
+}
 
 export const handler: Handlers = {
   GET(req, ctx) {
