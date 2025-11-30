@@ -22,8 +22,7 @@
     "tailwindcss": "npm:tailwindcss@3.4.3",
     "tailwindcss/": "npm:tailwindcss@3.4.3/",
     "tailwindcss/plugin": "npm:tailwindcss@3.4.3/plugin.js",
-    "animejs": "https://esm.sh/animejs@3.2.2",
-    "@google/genai": "https://esm.sh/@google/genai@0.0.2"
+    "animejs": "https://esm.sh/animejs@3.2.2"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" }
 }
