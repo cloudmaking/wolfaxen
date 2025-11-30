@@ -1,4 +1,4 @@
-const denoRef = (globalThis as typeof globalThis & { Deno?: typeof Deno }).Deno;
+const denoRef = (globalThis as any).Deno;
 
 if (denoRef && typeof denoRef.systemCpuInfo === "function") {
   let needsPatch = false;

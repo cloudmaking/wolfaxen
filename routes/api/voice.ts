@@ -1,5 +1,5 @@
 import { Handlers } from "$fresh/server.ts";
-import { ConnInfo } from "$fresh/server.ts";
+import { FreshContext } from "$fresh/server.ts";
 
 // Rate limiting: track connections per IP
 const connectionTracker = new Map<string, { count: number; resetAt: number }>();
@@ -17,9 +17,9 @@ const ALLOWED_ORIGINS = new Set([
   //"http://127.0.0.1:8000",
 ]);
 
-function getClientIP(req: Request, connInfo: ConnInfo): string {
+function getClientIP(req: Request, ctx: FreshContext): string {
   // Use actual remote address from connection, not client-supplied headers
-  const remoteAddr = connInfo.remoteAddr as Deno.NetAddr;
+  const remoteAddr = ctx.remoteAddr as Deno.NetAddr;
   if (remoteAddr?.hostname) {
     return remoteAddr.hostname;
   }

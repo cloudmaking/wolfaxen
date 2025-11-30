@@ -64,7 +64,7 @@ export default function VoiceAssistant() {
       // Audio Setup
       // @ts-ignore: webkitAudioContext
       const AudioContextClass = globalThis.AudioContext ||
-        globalThis.webkitAudioContext;
+        (globalThis as any).webkitAudioContext;
       inputAudioContextRef.current = new AudioContextClass({
         sampleRate: 16000,
       });

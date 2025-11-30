@@ -59,7 +59,7 @@ export default function MagneticButton({
   return (
     <div class="p-4 flex justify-center">
       <Component
-        ref={btnRef}
+        ref={btnRef as any}
         href={href}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}

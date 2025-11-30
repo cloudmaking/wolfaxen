@@ -53,12 +53,13 @@ export default function TerminalTyping({ commands: _commands }: TerminalTypingPr
       if ("cmd" in currentCommand) {
         _isTyping = true;
         const cmd = currentCommand.cmd;
+        if (!cmd) return;
         if (charIndex < cmd.length) {
           setCurrentLine(cmd.substring(0, charIndex + 1));
           charIndex++;
-          setTimeout(typeNextChar, currentCommand.delay + Math.random() * 50);
+          setTimeout(typeNextChar, (currentCommand.delay || 50) + Math.random() * 50);
         } else {
-          setLines((prev) => [...prev, { text: cmd, type: "command" }]);
+          setLines((prev) => [...prev, { text: cmd, type: "command" as const }]);
           setCurrentLine("");
           charIndex = 0;
           lineIndex++;
