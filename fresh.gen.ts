@@ -4,20 +4,102 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $about from "./routes/about.tsx";
+import * as $api_contact from "./routes/api/contact.ts";
+import * as $api_voice from "./routes/api/voice.ts";
+import * as $case_studies_index from "./routes/case-studies/index.tsx";
 import * as $contactus from "./routes/contactus.tsx";
 import * as $index from "./routes/index.tsx";
+import * as $pricing from "./routes/pricing.tsx";
+import * as $services from "./routes/services.tsx";
+import * as $services_ai_automation_consulting from "./routes/services/ai-automation-consulting.tsx";
+import * as $services_ai_chatbots from "./routes/services/ai-chatbots.tsx";
+import * as $services_process_mapping from "./routes/services/process-mapping.tsx";
+import * as $services_salesforce_automation from "./routes/services/salesforce-automation.tsx";
+import * as $services_systems_integration from "./routes/services/systems-integration.tsx";
+import * as $sitemap_xml from "./routes/sitemap.xml.ts";
+import * as $AnimatedButton from "./islands/AnimatedButton.tsx";
+import * as $CircuitBoard from "./islands/CircuitBoard.tsx";
+import * as $ContactForm from "./islands/ContactForm.tsx";
+import * as $ContactPageTabs from "./islands/ContactPageTabs.tsx";
+import * as $CryptoText from "./islands/CryptoText.tsx";
+import * as $DataFlowPipeline from "./islands/DataFlowPipeline.tsx";
+import * as $DecodeText from "./islands/DecodeText.tsx";
+import * as $FloatingWidgets from "./islands/FloatingWidgets.tsx";
+import * as $GlitchText from "./islands/GlitchText.tsx";
+import * as $GlowingBorder from "./islands/GlowingBorder.tsx";
+import * as $GridRipple from "./islands/GridRipple.tsx";
+import * as $HeroAnimations from "./islands/HeroAnimations.tsx";
+import * as $HeroPointerField from "./islands/HeroPointerField.tsx";
 import * as $ImageSlider from "./islands/ImageSlider.tsx";
+import * as $MagneticButton from "./islands/MagneticButton.tsx";
+import * as $MagneticCard from "./islands/MagneticCard.tsx";
+import * as $MetricCard from "./islands/MetricCard.tsx";
+import * as $Navbar from "./islands/Navbar.tsx";
+import * as $NeuralGrid from "./islands/NeuralGrid.tsx";
+import * as $OrbitingNodes from "./islands/OrbitingNodes.tsx";
+import * as $ParticleField from "./islands/ParticleField.tsx";
+import * as $PixelRobot from "./islands/PixelRobot.tsx";
+import * as $ProcessNode from "./islands/ProcessNode.tsx";
+import * as $SalesforceGraph from "./islands/SalesforceGraph.tsx";
+import * as $ScrollReveal from "./islands/ScrollReveal.tsx";
+import * as $StaggeredGrid from "./islands/StaggeredGrid.tsx";
+import * as $TerminalTyping from "./islands/TerminalTyping.tsx";
+import * as $VoiceAssistant from "./islands/VoiceAssistant.tsx";
+import * as $WireframeBlueprint from "./islands/WireframeBlueprint.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/about.tsx": $about,
+    "./routes/api/contact.ts": $api_contact,
+    "./routes/api/voice.ts": $api_voice,
+    "./routes/case-studies/index.tsx": $case_studies_index,
     "./routes/contactus.tsx": $contactus,
     "./routes/index.tsx": $index,
+    "./routes/pricing.tsx": $pricing,
+    "./routes/services.tsx": $services,
+    "./routes/services/ai-automation-consulting.tsx":
+      $services_ai_automation_consulting,
+    "./routes/services/ai-chatbots.tsx": $services_ai_chatbots,
+    "./routes/services/process-mapping.tsx": $services_process_mapping,
+    "./routes/services/salesforce-automation.tsx":
+      $services_salesforce_automation,
+    "./routes/services/systems-integration.tsx": $services_systems_integration,
+    "./routes/sitemap.xml.ts": $sitemap_xml,
   },
   islands: {
+    "./islands/AnimatedButton.tsx": $AnimatedButton,
+    "./islands/CircuitBoard.tsx": $CircuitBoard,
+    "./islands/ContactForm.tsx": $ContactForm,
+    "./islands/ContactPageTabs.tsx": $ContactPageTabs,
+    "./islands/CryptoText.tsx": $CryptoText,
+    "./islands/DataFlowPipeline.tsx": $DataFlowPipeline,
+    "./islands/DecodeText.tsx": $DecodeText,
+    "./islands/FloatingWidgets.tsx": $FloatingWidgets,
+    "./islands/GlitchText.tsx": $GlitchText,
+    "./islands/GlowingBorder.tsx": $GlowingBorder,
+    "./islands/GridRipple.tsx": $GridRipple,
+    "./islands/HeroAnimations.tsx": $HeroAnimations,
+    "./islands/HeroPointerField.tsx": $HeroPointerField,
     "./islands/ImageSlider.tsx": $ImageSlider,
+    "./islands/MagneticButton.tsx": $MagneticButton,
+    "./islands/MagneticCard.tsx": $MagneticCard,
+    "./islands/MetricCard.tsx": $MetricCard,
+    "./islands/Navbar.tsx": $Navbar,
+    "./islands/NeuralGrid.tsx": $NeuralGrid,
+    "./islands/OrbitingNodes.tsx": $OrbitingNodes,
+    "./islands/ParticleField.tsx": $ParticleField,
+    "./islands/PixelRobot.tsx": $PixelRobot,
+    "./islands/ProcessNode.tsx": $ProcessNode,
+    "./islands/SalesforceGraph.tsx": $SalesforceGraph,
+    "./islands/ScrollReveal.tsx": $ScrollReveal,
+    "./islands/StaggeredGrid.tsx": $StaggeredGrid,
+    "./islands/TerminalTyping.tsx": $TerminalTyping,
+    "./islands/VoiceAssistant.tsx": $VoiceAssistant,
+    "./islands/WireframeBlueprint.tsx": $WireframeBlueprint,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

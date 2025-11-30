@@ -32,5 +32,3 @@ jobs:
           project: "wolfaxen-webiste"
           entrypoint: "main.ts"
           root: "."
-          
-          

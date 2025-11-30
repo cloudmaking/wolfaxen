@@ -1,0 +1,278 @@
+Wolfaxen Website — Final PRD (Product Requirements Document)
+
+Version 1.0 — Ready for Build
+
+1. Purpose
+
+Wolfaxen is a consultancy focused on process mapping, optimisation, automation, and AI-powered technical solutions delivered at fair, transparent, non-exploitative pricing.
+
+The website must communicate clarity, capability, and trust — positioned as the practical alternative to overpriced agencies.
+
+2. Target Audience
+
+Small to mid-size businesses
+
+Scaling teams lacking internal technical capacity
+
+Operations, sales, and service teams needing automation
+
+Non-technical founders
+
+Companies considering AI adoption but unsure where to begin
+
+Businesses frustrated with expensive agencies/locked-in platforms
+
+3. Core Value Proposition
+
+“We map your processes, fix inefficiencies, build the automations, integrate the systems, and deliver AI solutions — all for a fair cost.”
+
+4. Services (What Wolfaxen Offers)
+4.1 Process Mapping & Analysis
+
+Deep-dive workshops
+
+Full documentation of current processes
+
+Identification of inefficiencies
+
+KPI & bottleneck assessment
+
+Future-state blueprint mapping
+
+Deliverable: A clear map of exactly how the business works and where improvements can be made.
+
+4.2 Process Optimisation
+
+Redesign of workflows
+
+Removal of redundancies
+
+Standardisation and best practices
+
+Human + AI blended process improvements
+
+Deliverable: A streamlined, measurable, improved workflow.
+
+4.3 Automation Solutions
+
+No-code / low-code automations
+
+Custom integrations
+
+API development
+
+Task automation, notifications, and workflow automation
+
+Intelligent routing and triggers
+
+Platforms supported:
+n8n, Zapier, Make.com, Dify, Voiceflow, custom JS/TS, Python, Google Workspace, Microsoft 365.
+
+4.4 AI Solutions
+
+Internal chatbots (staff assistants)
+
+Customer-facing chatbots
+
+RAG pipelines (vector DB, embeddings)
+
+Lead scoring agents
+
+Document Q&A systems
+
+Voice & call AI agents
+
+Internal analytics chatbots (historical logs, transcripts)
+
+Deliverable: Tailored AI tools that the business owns, with no lock-in.
+
+4.5 Software Integrations
+
+CRM (Salesforce, HubSpot, Pipedrive)
+
+Booking systems
+
+Payment systems
+
+Email + marketing automation tools
+
+Customer service platforms
+
+Third-party APIs
+
+Deliverable: Fully connected, fully working system.
+
+4.6 Technical Projects
+
+Website development (full-stack)
+
+Hosting & deployment
+
+Data migration
+
+System rebuilds
+
+Internal dashboards & reporting
+
+Custom apps
+
+4.7 Maintenance & Support
+
+Monthly support packages (fair cost)
+
+Monitoring & issue resolution
+
+Documentation & handover
+
+Team training
+
+5. Pricing Model
+
+Keep it simple, honest, and transparent.
+
+Pricing Structure
+
+Initial process-mapping audit: Fixed price
+
+Project builds: Day rate or per-deliverable
+
+AI agents: One-off build + optional monthly support
+
+Automation builds: Per-flow or per-integration
+
+Web development: Project-based
+
+Support retainers: Low monthly fee (non-exploitative)
+
+Avoid:
+
+Lock-in
+
+Hidden fees
+
+Forced subscriptions
+
+“Enterprise pricing traps”
+
+6. Website Pages (Final List)
+Homepage
+
+Clear hero section:
+“Process mapping, automation, and AI — built properly, priced fairly.”
+
+High-level overview of services
+
+CTA to book a discovery call
+
+Small portfolio/feature highlights (real, concrete things)
+
+Services
+
+Broken down into:
+
+Process Mapping
+
+Process Optimisation
+
+Automation
+
+AI Solutions
+
+Integrations
+
+Technical Projects
+
+Support
+
+Each section:
+What we do → Why it matters → Typical results → Example deliverables.
+
+Case Studies / Portfolio
+
+Even 2–3 internal examples to start
+
+Focus on outcomes
+
+Show the depth of technical + process thinking
+
+Pricing
+
+Simple table:
+
+Process mapping audit
+
+AI agent build
+
+Automation flows
+
+Website / dev projects
+
+Retainers
+
+“Transparent. No nonsense. No lock-in.”
+
+About
+
+Your background
+
+Your expertise (Ops + Salesforce + automation + RAG + AI agents + dev)
+
+Philosophy: “Build once, own forever”
+
+Contact / Book a Consultation
+
+Automated meeting booking tool
+
+Form (name, email, organisation, problem)
+
+Blog / Insights (optional v2)
+
+Thought leadership on automation & AI.
+
+7. Technical Requirements
+
+Built on your Deno + Fresh stack 
+
+SEO-optimised
+
+Fast loading
+
+Mobile-first
+
+Analytics integrated
+
+Optional: Ad landing pages for direct ads traffic
+
+8. V1 Deliverables (Status: Completed)
+
+[x] Fully designed, deployed website (Initial V1)
+[x] Full service descriptions
+[x] Pricing structure
+[x] Contact & booking flows (UI only)
+[x] Branding assets (logo, colours, typography)
+[x] Founder Bio & Avatar
+
+9. V1.5 Design Refresh (Current Focus)
+
+Goal: Modernise the look with a new, richer colour palette and "deeply integrated" design elements.
+New Palette: #B9B07B, #71744F, #D5C0A5, #EDCE91, #5C2120, #BA7770.
+Key Changes:
+- Move away from basic flat design.
+- Introduce gradients, glassmorphism, and depth.
+- Make the site feel less "template-like" and more bespoke.
+
+10. V2 Roadmap
+
+Interactive automation demo
+
+AI voice and chatbot to sell Wolfaxen services
+
+Customer onboarding portal
+
+Proposal generator
+
+Automated process audit form
+
+Marketplace of “prebuilt automations”
+
+Subscription support portal

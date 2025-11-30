@@ -1,149 +1,125 @@
-import { Head } from "$fresh/runtime.ts";
+import ContactPageTabs from "../islands/ContactPageTabs.tsx";
+import MagneticCard from "../islands/MagneticCard.tsx";
+import DecodeText from "../islands/DecodeText.tsx";
+import Sheen from "../components/Sheen.tsx";
 
 export default function ContactUs() {
-    return (
-        <>
-            <Head>
-                <title>Contact Us - NexaFlow | Wolfaxen</title>
-                <script src="https://cdn.tailwindcss.com"></script>
-                {/* Optional Tailwind CSS Configuration */}
-                <script>
-                    {`tailwind.config = {
-            theme: {
-              extend: {
-                colors: {
-                  // Add custom colors if needed
-                },
-              },
-            },
-          }`}
-                </script>
-            </Head>
-            <body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
-                {/* Header */}
-                <header class="bg-white shadow-md">
-                    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-                        <a
-                            href="/"
-                            class="text-2xl font-bold text-gray-800 hover:text-gray-700"
-                        >
-                            NexaFlow | Wolfaxen
-                        </a>
-                        <nav class="flex space-x-4">
-                            <a
-                                href="/"
-                                class="text-gray-800 hover:text-blue-600"
-                            >
-                                Home
-                            </a>
-                            <a
-                                href="/contactus"
-                                class="text-blue-600 font-semibold"
-                            >
-                                Contact Us
-                            </a>
-                        </nav>
-                    </div>
-                </header>
+  return (
+    <div class="py-20 relative overflow-hidden">
+      {/* Background Effects */}
+      <div class="absolute top-1/4 right-0 w-[50%] h-[50%] bg-gradient-to-b from-muted-gold/5 to-transparent blur-[150px] rounded-full pointer-events-none">
+      </div>
 
-                {/* Main Content */}
-                <main class="container mx-auto px-6 py-16">
-                    <div class="flex flex-col items-center">
-                        <h2 class="text-3xl font-semibold text-gray-800 mb-6">
-                            Get in Touch
-                        </h2>
-                        <p class="text-gray-600 mb-8 text-center max-w-2xl">
-                            We'd love to hear from you! Please reach out to us
-                            using the contact information below.
-                        </p>
-                        <div class="space-y-4 text-center">
-                            <p class="flex items-center justify-center">
-                                <svg
-                                    class="w-6 h-6 text-blue-600 mr-2"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path d="M21 8V7l-3 2-2-1-7 5v6h9v-5l4-4zm-5 8h-5v-2l7-5v2l-2 1v4z" />
-                                    <path d="M5 6h4v2H5zm0 4h4v2H5zm0 4h4v2H5z" />
-                                </svg>
-                                Email:&nbsp;
-                                <a
-                                    href="mailto:info@wolfaxen.com"
-                                    class="text-blue-600"
-                                >
-                                    info@wolfaxen.com
-                                </a>
-                            </p>
-                            <p class="flex items-center justify-center">
-                                <svg
-                                    class="w-6 h-6 text-blue-600 mr-2"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path d="M18 2H6c-1.1 0-1.99.9-1.99 2L4 20l4-4h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-                                </svg>
-                                Phone:&nbsp;
-                                <span class="text-gray-800">
-                                    +44 7519 244960
-                                </span>
-                            </p>
-                            <p class="flex items-center justify-center">
-                                <svg
-                                    class="w-6 h-6 text-blue-600 mr-2"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
-                                </svg>
-                                Address:&nbsp;
-                                <span class="text-gray-800">London, UK</span>
-                            </p>
-                        </div>
-                    </div>
-                </main>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+          <div>
+            <h1 class="text-4xl md:text-6xl font-display font-bold text-warm-beige mb-8">
+              <DecodeText text="Let's build flow." scramble />
+            </h1>
+            <p class="text-xl text-warm-beige/60 mb-12">
+              Ready to reverse the chaos? Book a discovery call or send us a
+              message.
+            </p>
 
-                {/* Map Section */}
-                <section class="bg-gray-200 py-12">
-                    <div class="container mx-auto px-6">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
-                            Our Location
-                        </h2>
-                        <div class="flex items-center justify-center">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19804.060085665365!2d-0.1277588!3d51.5073506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b333c34b0d9%3A0x8d94c4b7f59c5b30!2sLondon%2C%20UK!5e0!3m2!1sen!2sus!4v1635555696549!5m2!1sen!2sus"
-                                width="100%"
-                                height="450"
-                                style="border:0;"
-                                allowFullScreen={true}
-                                loading="lazy"
-                                class="rounded-lg shadow-lg"
-                            >
-                            </iframe>
-                        </div>
-                    </div>
-                </section>
+            <div class="space-y-10 mb-12">
+              <MagneticCard intensity={10}>
+                <div class="flex items-start gap-6 group p-4 rounded-2xl hover:bg-white/5 transition-colors duration-300 relative overflow-hidden">
+                  <Sheen />
+                  <div class="w-14 h-14 bg-muted-gold/10 rounded-2xl flex items-center justify-center flex-shrink-0 border border-muted-gold/20 group-hover:bg-muted-gold/20 transition-colors duration-300 group-hover:scale-110 group-hover:rotate-3">
+                    <svg
+                      class="w-7 h-7 text-muted-gold"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold text-warm-beige mb-1 group-hover:text-light-gold transition-colors">
+                      Email Us
+                    </h3>
+                    <a
+                      href="mailto:info@wolfaxen.com"
+                      class="text-warm-beige/60 hover:text-muted-gold transition-colors"
+                    >
+                      info@wolfaxen.com
+                    </a>
+                  </div>
+                </div>
+              </MagneticCard>
 
-                {/* Footer */}
-                <footer class="bg-gray-800 text-gray-200">
-                    <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between">
-                        <p>
-                            &copy; 2023 NexaFlow | Wolfaxen. All rights
-                            reserved.
-                        </p>
-                        <div class="flex space-x-4 mt-4 md:mt-0">
-                            <a href="#" class="hover:text-white">
-                                Privacy Policy
-                            </a>
-                            <a href="#" class="hover:text-white">
-                                Terms of Service
-                            </a>
-                            <a href="#" class="hover:text-white">
-                                Contact
-                            </a>
-                        </div>
-                    </div>
-                </footer>
-            </body>
-        </>
-    );
+              <MagneticCard intensity={10}>
+                <div class="flex items-start gap-6 group p-4 rounded-2xl hover:bg-white/5 transition-colors duration-300 relative overflow-hidden">
+                  <Sheen />
+                  <div class="w-14 h-14 bg-deep-olive/20 rounded-2xl flex items-center justify-center flex-shrink-0 border border-deep-olive/30 group-hover:bg-deep-olive/30 transition-colors duration-300 group-hover:scale-110 group-hover:rotate-3">
+                    <svg
+                      class="w-7 h-7 text-light-gold"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold text-warm-beige mb-1 group-hover:text-light-gold transition-colors">
+                      Call Us
+                    </h3>
+                    <a
+                      href="tel:07519244960"
+                      class="text-warm-beige/60 hover:text-muted-gold transition-colors"
+                    >
+                      07519 244 960
+                    </a>
+                  </div>
+                </div>
+              </MagneticCard>
+
+              <MagneticCard intensity={10}>
+                <div class="flex items-start gap-6 group p-4 rounded-2xl hover:bg-white/5 transition-colors duration-300 relative overflow-hidden">
+                  <Sheen />
+                  <div class="w-14 h-14 bg-oxide-red/20 rounded-2xl flex items-center justify-center flex-shrink-0 border border-oxide-red/30 group-hover:bg-oxide-red/30 transition-colors duration-300 group-hover:scale-110 group-hover:rotate-3">
+                    <svg
+                      class="w-7 h-7 text-terra-cotta"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold text-warm-beige mb-1 group-hover:text-light-gold transition-colors">
+                      Book a Call
+                    </h3>
+                    <p class="text-warm-beige/60">
+                      Schedule a free 30-minute discovery session.
+                    </p>
+                  </div>
+                </div>
+              </MagneticCard>
+            </div>
+          </div>
+
+          <ContactPageTabs />
+        </div>
+      </div>
+    </div>
+  );
 }

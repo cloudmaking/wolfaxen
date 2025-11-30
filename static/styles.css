@@ -1,1 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap");
+/* Note: Clash Display and Satoshi might need local hosting or a different CDN if not on Google Fonts. 
+   For now, using Sora as a fallback for Display and Inter for Sans as they are readily available on Google Fonts. 
+   If the user provides the specific font files, we can update this. */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-oreo-black text-soft-cream font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display;
+}
