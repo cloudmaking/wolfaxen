@@ -42,18 +42,14 @@ export const authMiddleware: MiddlewareHandler<State> = async (req, ctx) => {
   const supabaseKey = Deno.env.get("SUPABASE_ANON_KEY");
 
   if (!supabaseUrl || !supabaseKey) {
-    console.error(
-      "CRITICAL ERROR: Missing SUPABASE_URL or SUPABASE_ANON_KEY environment variables.",
-    );
-    return new Response(
-      "Internal Configuration Error: Missing Database Credentials",
-      { status: 500 },
+    console.warn(
+      "WARNING: Missing SUPABASE_URL or SUPABASE_ANON_KEY. Supabase client will not function correctly.",
     );
   }
 
   const client = createClientFn(
-    supabaseUrl,
-    supabaseKey,
+    supabaseUrl || "https://placeholder.supabase.co",
+    supabaseKey || "placeholder",
     { auth: { persistSession: false } },
   );
 
@@ -64,18 +60,22 @@ export const authMiddleware: MiddlewareHandler<State> = async (req, ctx) => {
   let accessToken: string | null = null;
   let refreshToken: string | null = null;
   let session: Session | null = null;
-  const cookies = req.headers.get("cookie");
-  if (cookies) {
-    const match = cookies.match(/supa_access_token=([^;]+)/);
-    if (match) accessToken = match[1];
-    const refreshMatch = cookies.match(/supa_refresh_token=([^;]+)/);
-    if (refreshMatch) refreshToken = refreshMatch[1];
-  }
 
-  if (!accessToken) {
-    const authHeader = req.headers.get("Authorization");
-    if (authHeader && authHeader.startsWith("Bearer ")) {
-      accessToken = authHeader.replace("Bearer ", "");
+  // Only attempt to parse tokens if we have a valid configuration
+  if (supabaseUrl && supabaseKey) {
+    const cookies = req.headers.get("cookie");
+    if (cookies) {
+      const match = cookies.match(/supa_access_token=([^;]+)/);
+      if (match) accessToken = match[1];
+      const refreshMatch = cookies.match(/supa_refresh_token=([^;]+)/);
+      if (refreshMatch) refreshToken = refreshMatch[1];
+    }
+
+    if (!accessToken) {
+      const authHeader = req.headers.get("Authorization");
+      if (authHeader && authHeader.startsWith("Bearer ")) {
+        accessToken = authHeader.replace("Bearer ", "");
+      }
     }
   }
 
