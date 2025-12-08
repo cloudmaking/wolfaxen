@@ -1,115 +1,95 @@
 import { Head } from "$fresh/runtime.ts";
-import AnimatedButton from "../../islands/AnimatedButton.tsx";
+import Button from "../../components/Button.tsx";
 
-export default function ProcessMapping() {
+export default function ProcessMappingService() {
   return (
     <>
       <Head>
-        <title>Business Process Mapping & Workflow Design | Wolfaxen</title>
+        <title>AI Process Mapping - Wolfaxen</title>
         <meta
           name="description"
-          content="Visualise your operations with expert business process mapping. We identify bottlenecks and design optimised workflows for maximum efficiency."
+          content="Visualize and optimize your business workflows with our AI-powered Process Mapper."
         />
       </Head>
-      <div class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h1 class="text-4xl md:text-6xl font-display font-bold mb-6 text-warm-beige">
-            Business Process Mapping & Workflow Design
-          </h1>
-          <p class="text-xl text-warm-beige/70 max-w-3xl mx-auto">
-            You can't automate what you don't understand. We map your entire
-            operation to find the hidden inefficiencies.
-          </p>
-        </div>
+      <div class="min-h-screen bg-oreo-black text-warm-beige font-sans selection:bg-muted-gold selection:text-oreo-black">
+        {/* Hero Section */}
+        <section class="relative pt-32 pb-20 overflow-hidden">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-muted-gold/10 via-transparent to-transparent opacity-50" />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-          <div class="order-2 md:order-1 bg-white/5 rounded-2xl p-8 border border-white/10">
-            <h3 class="text-2xl font-bold mb-4 text-light-gold">
-              Our Process
-            </h3>
-            <div class="space-y-6">
-              <div class="flex gap-4">
-                <div class="w-8 h-8 rounded-full bg-muted-gold/20 flex items-center justify-center text-muted-gold font-bold">
-                  1
-                </div>
-                <div>
-                  <h4 class="font-bold text-warm-beige">
-                    Discovery Workshops
-                  </h4>
-                  <p class="text-sm text-warm-beige/60">
-                    We sit down with your team to understand how work actually
-                    gets done.
-                  </p>
-                </div>
-              </div>
-              <div class="flex gap-4">
-                <div class="w-8 h-8 rounded-full bg-muted-gold/20 flex items-center justify-center text-muted-gold font-bold">
-                  2
-                </div>
-                <div>
-                  <h4 class="font-bold text-warm-beige">Visual Mapping</h4>
-                  <p class="text-sm text-warm-beige/60">
-                    Creating detailed flowcharts that expose bottlenecks and
-                    redundancies.
-                  </p>
-                </div>
-              </div>
-              <div class="flex gap-4">
-                <div class="w-8 h-8 rounded-full bg-muted-gold/20 flex items-center justify-center text-muted-gold font-bold">
-                  3
-                </div>
-                <div>
-                  <h4 class="font-bold text-warm-beige">
-                    Optimisation Strategy
-                  </h4>
-                  <p class="text-sm text-warm-beige/60">
-                    Designing the "To-Be" state with streamlined workflows and
-                    clear ownership.
-                  </p>
-                </div>
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+              <h1 class="text-5xl md:text-7xl font-display font-bold text-warm-beige mb-6 leading-tight">
+                Visualize Your <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-muted-gold to-light-gold">
+                  Workflow Intelligence
+                </span>
+              </h1>
+              <p class="text-xl text-warm-beige/60 mb-10 leading-relaxed">
+                Transform complex business operations into clear, actionable
+                visual maps instantly. Identify bottlenecks, optimize
+                efficiency, and scale with confidence using our AI-powered
+                engine.
+              </p>
+
+              <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button
+                  disabled
+                  variant="primary"
+                  className="w-full sm:w-auto px-8 py-4 text-lg"
+                >
+                  Launch Process Mapper (Coming Soon)
+                </Button>
+                <Button
+                  href="/contactus"
+                  variant="secondary"
+                  className="w-full sm:w-auto px-8 py-4 text-lg"
+                >
+                  Book a Demo
+                </Button>
               </div>
             </div>
           </div>
-          <div class="order-1 md:order-2">
-            <h2 class="text-3xl font-display font-bold mb-4 text-muted-gold">
-              Clarity is Power
-            </h2>
-            <p class="text-lg text-warm-beige/80 mb-6 leading-relaxed">
-              Most businesses run on tribal knowledge and "the way we've always
-              done it." Process mapping brings everything into the light,
-              allowing you to scale without chaos.
-            </p>
-            <ul class="space-y-4 mb-8">
-              <li class="flex items-start">
-                <span class="text-muted-gold mr-2">✓</span>
-                <span>Standardise operations across teams</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-muted-gold mr-2">✓</span>
-                <span>Onboard new hires faster with clear documentation</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-muted-gold mr-2">✓</span>
-                <span>Prepare your business for automation</span>
-              </li>
-            </ul>
-            <AnimatedButton href="/contactus" variant="primary">
-              Map Your Processes
-            </AnimatedButton>
-          </div>
-        </div>
+        </section>
 
-        <div class="text-center bg-white/5 rounded-3xl p-12 border border-white/10">
-          <h2 class="text-3xl font-display font-bold mb-6 text-warm-beige">
-            See the full picture
-          </h2>
-          <p class="text-lg text-warm-beige/70 mb-8 max-w-2xl mx-auto">
-            Get a clear blueprint of your business operations.
-          </p>
-          <AnimatedButton href="/contactus" variant="primary">
-            Get Started
-          </AnimatedButton>
-        </div>
+        {/* Feature Grid */}
+        <section class="py-20 bg-white/5 backdrop-blur-sm">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Instant Visualization",
+                  desc:
+                    "Turn text descriptions into professional flowcharts in seconds.",
+                  icon: "⚡",
+                },
+                {
+                  title: "Bottleneck Analysis",
+                  desc:
+                    "AI identifies inefficiencies and suggests actionable improvements.",
+                  icon: "🔍",
+                },
+                {
+                  title: "Strategic Insights",
+                  desc:
+                    "Get executive summaries and optimization strategies automatically.",
+                  icon: "📈",
+                },
+              ].map((feature) => (
+                <div class="p-8 rounded-2xl bg-oreo-black border border-white/10 hover:border-muted-gold/30 transition-all duration-300 group">
+                  <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {feature.icon}
+                  </div>
+                  <h3 class="text-xl font-display font-bold text-warm-beige mb-3 group-hover:text-muted-gold transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p class="text-warm-beige/60 leading-relaxed">
+                    {feature.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import { useState } from "preact/hooks";
-import VoiceAssistant from "./VoiceAssistant.tsx";
+import ChatAssistant from "./ChatAssistant.tsx";
 import ContactForm from "./ContactForm.tsx";
 import MagneticCard from "./MagneticCard.tsx";
 import GlowingBorder from "./GlowingBorder.tsx";
@@ -22,7 +22,7 @@ export default function ContactPageTabs() {
                 : "text-warm-beige/60 hover:text-warm-beige"
             }`}
           >
-            Talk to AI
+            Chat with AI
           </button>
           <button
             type="button"
@@ -52,7 +52,7 @@ export default function ContactPageTabs() {
         {activeTab === "voice"
           ? (
             <div class="animate-fade-in">
-              <VoiceAssistant />
+              <ChatAssistant />
             </div>
           )
           : (

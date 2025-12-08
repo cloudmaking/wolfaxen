@@ -14,11 +14,10 @@ export default function ContactUs() {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
           <div>
             <h1 class="text-4xl md:text-6xl font-display font-bold text-warm-beige mb-8">
-              <DecodeText text="Let's build flow." scramble />
+              <DecodeText text="Let's fix it." scramble />
             </h1>
             <p class="text-xl text-warm-beige/60 mb-12">
-              Ready to reverse the chaos? Book a discovery call or send us a
-              message.
+              Ready to stop the chaos? Book a call or just email me.
             </p>
 
             <div class="space-y-10 mb-12">
@@ -42,7 +41,7 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <h3 class="text-xl font-bold text-warm-beige mb-1 group-hover:text-light-gold transition-colors">
-                      Email Us
+                      Email me
                     </h3>
                     <a
                       href="mailto:info@wolfaxen.com"
@@ -74,7 +73,7 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <h3 class="text-xl font-bold text-warm-beige mb-1 group-hover:text-light-gold transition-colors">
-                      Call Us
+                      Call me
                     </h3>
                     <a
                       href="tel:07519244960"
@@ -106,10 +105,10 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <h3 class="text-xl font-bold text-warm-beige mb-1 group-hover:text-light-gold transition-colors">
-                      Book a Call
+                      Book time
                     </h3>
                     <p class="text-warm-beige/60">
-                      Schedule a free 30-minute discovery session.
+                      Free 30-minute chat. No sales pitch.
                     </p>
                   </div>
                 </div>

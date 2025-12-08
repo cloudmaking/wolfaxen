@@ -11,11 +11,15 @@ const ALLOWED_ORIGINS = new Set([
   // Production
   "https://wolfaxen.com",
   "https://www.wolfaxen.com",
-  // Development (remove these in production if you want stricter security)
-  //"http://localhost:8000",
-  //"http://localhost:3000",
-  //"http://127.0.0.1:8000",
 ]);
+const DEV_ORIGINS = new Set([
+  "http://localhost:8000",
+  "http://localhost:3000",
+  "http://127.0.0.1:8000",
+]);
+const envAllowDev = Deno.env.get("ALLOW_DEV_ORIGINS");
+console.log("DEBUG: ALLOW_DEV_ORIGINS env var:", `"${envAllowDev}"`);
+const allowDevOrigins = envAllowDev?.trim().toLowerCase() === "true";
 
 function getClientIP(req: Request, ctx: FreshContext): string {
   // Use actual remote address from connection, not client-supplied headers
@@ -31,7 +35,9 @@ function isOriginAllowed(req: Request): boolean {
   const origin = req.headers.get("origin");
   // REQUIRE origin header - reject requests without it
   if (!origin) return false;
-  return ALLOWED_ORIGINS.has(origin);
+  if (ALLOWED_ORIGINS.has(origin)) return true;
+  if (allowDevOrigins && DEV_ORIGINS.has(origin)) return true;
+  return false;
 }
 
 function checkRateLimit(ip: string): { allowed: boolean; retryAfter?: number } {
@@ -104,8 +110,13 @@ export const handler: Handlers = {
       console.warn(
         `⚠️ Rejected connection: missing or unauthorized origin: ${
           req.headers.get("origin") || "(none)"
-        }`,
+        }. allowDevOrigins=${allowDevOrigins}`,
       );
+      if (DEV_ORIGINS.has(req.headers.get("origin") || "")) {
+        console.warn(
+          "💡 Hint: Set ALLOW_DEV_ORIGINS=true in your .env to allow this origin.",
+        );
+      }
       return new Response("Forbidden: Origin required", { status: 403 });
     }
 

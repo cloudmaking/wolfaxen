@@ -3,17 +3,34 @@ import Navbar from "../islands/Navbar.tsx";
 import Footer from "../components/Footer.tsx";
 
 export default function App({ Component }: PageProps) {
+  const supabaseAnonKey = Deno.env.get("SUPABASE_ANON_KEY") || "";
+  if (supabaseAnonKey.toLowerCase().includes("service")) {
+    console.error(
+      "[SECURITY] SUPABASE_ANON_KEY looks like a service role key. Do not expose it to clients.",
+    );
+  }
+
   return (
     <html lang="en">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Wolfaxen | AI Automation & Process Optimisation Consultancy</title>
+        <title>
+          Wolfaxen | AI Automation & Process Optimisation Consultancy
+        </title>
         <meta
           name="description"
           content="Wolfaxen is an AI automation and process optimisation consultancy. We build custom AI chatbots, integrate business systems, and automate workflows."
         />
         <link rel="stylesheet" href="/styles.css" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.SUPABASE_URL = "${Deno.env.get("SUPABASE_URL") || ""}";
+              window.SUPABASE_ANON_KEY = "${supabaseAnonKey}";
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           // deno-lint-ignore react-no-danger

@@ -1,10 +1,34 @@
-import { useRef, useState } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
 import Button from "../components/Button.tsx";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [user, setUser] = useState<any>(null);
   const timeoutRef = useRef<number | null>(null);
+  const userMenuTimeoutRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const loadUser = async () => {
+      try {
+        const res = await fetch("/api/auth/me");
+        if (res.ok) {
+          const data = await res.json();
+          setUser(data.session?.user || null);
+        } else {
+          setUser(null);
+        }
+      } catch (_err) {
+        setUser(null);
+      }
+    };
+    loadUser();
+  }, []);
+
+  const handleSignOut = async () => {
+    window.location.href = "/auth/signout";
+  };
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
@@ -20,6 +44,20 @@ export default function Navbar() {
     }, 300);
   };
 
+  const handleUserMenuEnter = () => {
+    if (userMenuTimeoutRef.current) {
+      clearTimeout(userMenuTimeoutRef.current);
+      userMenuTimeoutRef.current = null;
+    }
+    setIsUserMenuOpen(true);
+  };
+
+  const handleUserMenuLeave = () => {
+    userMenuTimeoutRef.current = setTimeout(() => {
+      setIsUserMenuOpen(false);
+    }, 300);
+  };
+
   const serviceLinks = [
     { name: "Process Mapping", href: "/services/process-mapping" },
     { name: "Salesforce Automation", href: "/services/salesforce-automation" },
@@ -29,7 +67,6 @@ export default function Navbar() {
   ];
 
   const navLinks = [
-    { name: "Case Studies", href: "/case-studies" },
     { name: "Pricing", href: "/pricing" },
     { name: "About", href: "/about" },
   ];
@@ -108,6 +145,50 @@ export default function Navbar() {
                   <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-muted-gold transition-all duration-300 group-hover:w-full" />
                 </a>
               ))}
+
+              {user
+                ? (
+                  <div
+                    class="relative ml-4"
+                    onMouseEnter={handleUserMenuEnter}
+                    onMouseLeave={handleUserMenuLeave}
+                  >
+                    <button class="flex items-center gap-2 focus:outline-none">
+                      <div class="h-9 w-9 rounded-full bg-gradient-to-br from-muted-gold to-light-gold flex items-center justify-center text-oreo-black font-bold shadow-lg ring-2 ring-white/10 hover:ring-muted-gold/50 transition-all">
+                        {user.email?.[0]?.toUpperCase() || "U"}
+                      </div>
+                    </button>
+
+                    <div
+                      class={`absolute right-0 mt-2 w-48 rounded-xl shadow-lg bg-oreo-black border border-white/10 ring-1 ring-black ring-opacity-5 focus:outline-none transition-all duration-200 origin-top-right ${
+                        isUserMenuOpen
+                          ? "opacity-100 scale-100 translate-y-0"
+                          : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                      }`}
+                    >
+                      <div class="py-1">
+                        <a
+                          href="/dashboard"
+                          class="block px-4 py-2 text-sm text-warm-beige/70 hover:bg-white/5 hover:text-muted-gold"
+                        >
+                          Dashboard
+                        </a>
+                        <button
+                          onClick={handleSignOut}
+                          class="block w-full text-left px-4 py-2 text-sm text-warm-beige/70 hover:bg-white/5 hover:text-red-400"
+                        >
+                          Sign Out
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )
+                : (
+                  <Button href="/login" variant="secondary" className="ml-4">
+                    Sign In
+                  </Button>
+                )}
+
               <Button href="/contactus" variant="primary" className="ml-4">
                 Book a Call
               </Button>
@@ -185,7 +266,29 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <div class="pt-4">
+            <div class="pt-4 space-y-2">
+              {user
+                ? (
+                  <>
+                    <a
+                      href="/dashboard"
+                      class="block w-full text-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-oreo-black bg-muted-gold hover:bg-light-gold"
+                    >
+                      Dashboard
+                    </a>
+                    <button
+                      onClick={handleSignOut}
+                      class="block w-full text-center px-4 py-2 border border-white/10 rounded-md shadow-sm text-base font-medium text-warm-beige hover:bg-white/5"
+                    >
+                      Sign Out
+                    </button>
+                  </>
+                )
+                : (
+                  <Button href="/login" variant="secondary" className="w-full">
+                    Sign In
+                  </Button>
+                )}
               <Button href="/contactus" variant="primary" className="w-full">
                 Book a Call
               </Button>

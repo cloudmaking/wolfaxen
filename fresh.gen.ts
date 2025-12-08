@@ -5,24 +5,52 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $about from "./routes/about.tsx";
+import * as $api_middleware from "./routes/api/_middleware.ts";
+import * as $api_auth_me from "./routes/api/auth/me.ts";
+import * as $api_auth_set_session from "./routes/api/auth/set-session.ts";
+import * as $api_chat from "./routes/api/chat.ts";
 import * as $api_contact from "./routes/api/contact.ts";
+import * as $api_create_checkout_session from "./routes/api/create-checkout-session.ts";
+import * as $api_generate_map from "./routes/api/generate-map.ts";
+import * as $api_leads_unqualified from "./routes/api/leads/unqualified.ts";
+import * as $api_process_mapper_middleware from "./routes/api/process-mapper/_middleware.ts";
+import * as $api_process_mapper_generate from "./routes/api/process-mapper/generate.ts";
+import * as $api_process_mapper_request_help from "./routes/api/process-mapper/request-help.ts";
+import * as $api_process_mapper_revert from "./routes/api/process-mapper/revert.ts";
+import * as $api_process_mapper_update from "./routes/api/process-mapper/update.ts";
+import * as $api_profile_update from "./routes/api/profile/update.ts";
+import * as $api_stripe_webhook from "./routes/api/stripe-webhook.ts";
+import * as $api_transcribe from "./routes/api/transcribe.ts";
 import * as $api_voice from "./routes/api/voice.ts";
-import * as $case_studies_index from "./routes/case-studies/index.tsx";
+import * as $app_process_mapper from "./routes/app/process-mapper.tsx";
+import * as $auth_callback from "./routes/auth/callback.tsx";
+import * as $auth_signout from "./routes/auth/signout.ts";
 import * as $contactus from "./routes/contactus.tsx";
+import * as $dashboard from "./routes/dashboard.tsx";
+import * as $dashboard_middleware from "./routes/dashboard/_middleware.ts";
 import * as $index from "./routes/index.tsx";
+import * as $login from "./routes/login.tsx";
 import * as $pricing from "./routes/pricing.tsx";
+import * as $process_mapper from "./routes/process-mapper.tsx";
 import * as $services from "./routes/services.tsx";
 import * as $services_ai_automation_consulting from "./routes/services/ai-automation-consulting.tsx";
 import * as $services_ai_chatbots from "./routes/services/ai-chatbots.tsx";
 import * as $services_process_mapping from "./routes/services/process-mapping.tsx";
 import * as $services_salesforce_automation from "./routes/services/salesforce-automation.tsx";
+import * as $services_system_administration from "./routes/services/system-administration.tsx";
 import * as $services_systems_integration from "./routes/services/systems-integration.tsx";
+import * as $signup from "./routes/signup.tsx";
 import * as $sitemap_xml from "./routes/sitemap.xml.ts";
+import * as $tools_middleware from "./routes/tools/_middleware.ts";
+import * as $tools_process_mapper from "./routes/tools/process-mapper.tsx";
 import * as $AnimatedButton from "./islands/AnimatedButton.tsx";
+import * as $AuthForms from "./islands/AuthForms.tsx";
+import * as $ChatAssistant from "./islands/ChatAssistant.tsx";
 import * as $CircuitBoard from "./islands/CircuitBoard.tsx";
 import * as $ContactForm from "./islands/ContactForm.tsx";
 import * as $ContactPageTabs from "./islands/ContactPageTabs.tsx";
 import * as $CryptoText from "./islands/CryptoText.tsx";
+import * as $Dashboard from "./islands/Dashboard.tsx";
 import * as $DataFlowPipeline from "./islands/DataFlowPipeline.tsx";
 import * as $DecodeText from "./islands/DecodeText.tsx";
 import * as $FloatingWidgets from "./islands/FloatingWidgets.tsx";
@@ -32,6 +60,7 @@ import * as $GridRipple from "./islands/GridRipple.tsx";
 import * as $HeroAnimations from "./islands/HeroAnimations.tsx";
 import * as $HeroPointerField from "./islands/HeroPointerField.tsx";
 import * as $ImageSlider from "./islands/ImageSlider.tsx";
+import * as $LoginError from "./islands/LoginError.tsx";
 import * as $MagneticButton from "./islands/MagneticButton.tsx";
 import * as $MagneticCard from "./islands/MagneticCard.tsx";
 import * as $MetricCard from "./islands/MetricCard.tsx";
@@ -40,7 +69,10 @@ import * as $NeuralGrid from "./islands/NeuralGrid.tsx";
 import * as $OrbitingNodes from "./islands/OrbitingNodes.tsx";
 import * as $ParticleField from "./islands/ParticleField.tsx";
 import * as $PixelRobot from "./islands/PixelRobot.tsx";
+import * as $ProcessMapper from "./islands/ProcessMapper.tsx";
+import * as $ProcessMapperWrapper from "./islands/ProcessMapperWrapper.tsx";
 import * as $ProcessNode from "./islands/ProcessNode.tsx";
+import * as $ProfileForm from "./islands/ProfileForm.tsx";
 import * as $SalesforceGraph from "./islands/SalesforceGraph.tsx";
 import * as $ScrollReveal from "./islands/ScrollReveal.tsx";
 import * as $StaggeredGrid from "./islands/StaggeredGrid.tsx";
@@ -54,12 +86,35 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/about.tsx": $about,
+    "./routes/api/_middleware.ts": $api_middleware,
+    "./routes/api/auth/me.ts": $api_auth_me,
+    "./routes/api/auth/set-session.ts": $api_auth_set_session,
+    "./routes/api/chat.ts": $api_chat,
     "./routes/api/contact.ts": $api_contact,
+    "./routes/api/create-checkout-session.ts": $api_create_checkout_session,
+    "./routes/api/generate-map.ts": $api_generate_map,
+    "./routes/api/leads/unqualified.ts": $api_leads_unqualified,
+    "./routes/api/process-mapper/_middleware.ts":
+      $api_process_mapper_middleware,
+    "./routes/api/process-mapper/generate.ts": $api_process_mapper_generate,
+    "./routes/api/process-mapper/request-help.ts":
+      $api_process_mapper_request_help,
+    "./routes/api/process-mapper/revert.ts": $api_process_mapper_revert,
+    "./routes/api/process-mapper/update.ts": $api_process_mapper_update,
+    "./routes/api/profile/update.ts": $api_profile_update,
+    "./routes/api/stripe-webhook.ts": $api_stripe_webhook,
+    "./routes/api/transcribe.ts": $api_transcribe,
     "./routes/api/voice.ts": $api_voice,
-    "./routes/case-studies/index.tsx": $case_studies_index,
+    "./routes/app/process-mapper.tsx": $app_process_mapper,
+    "./routes/auth/callback.tsx": $auth_callback,
+    "./routes/auth/signout.ts": $auth_signout,
     "./routes/contactus.tsx": $contactus,
+    "./routes/dashboard.tsx": $dashboard,
+    "./routes/dashboard/_middleware.ts": $dashboard_middleware,
     "./routes/index.tsx": $index,
+    "./routes/login.tsx": $login,
     "./routes/pricing.tsx": $pricing,
+    "./routes/process-mapper.tsx": $process_mapper,
     "./routes/services.tsx": $services,
     "./routes/services/ai-automation-consulting.tsx":
       $services_ai_automation_consulting,
@@ -67,15 +122,23 @@ const manifest = {
     "./routes/services/process-mapping.tsx": $services_process_mapping,
     "./routes/services/salesforce-automation.tsx":
       $services_salesforce_automation,
+    "./routes/services/system-administration.tsx":
+      $services_system_administration,
     "./routes/services/systems-integration.tsx": $services_systems_integration,
+    "./routes/signup.tsx": $signup,
     "./routes/sitemap.xml.ts": $sitemap_xml,
+    "./routes/tools/_middleware.ts": $tools_middleware,
+    "./routes/tools/process-mapper.tsx": $tools_process_mapper,
   },
   islands: {
     "./islands/AnimatedButton.tsx": $AnimatedButton,
+    "./islands/AuthForms.tsx": $AuthForms,
+    "./islands/ChatAssistant.tsx": $ChatAssistant,
     "./islands/CircuitBoard.tsx": $CircuitBoard,
     "./islands/ContactForm.tsx": $ContactForm,
     "./islands/ContactPageTabs.tsx": $ContactPageTabs,
     "./islands/CryptoText.tsx": $CryptoText,
+    "./islands/Dashboard.tsx": $Dashboard,
     "./islands/DataFlowPipeline.tsx": $DataFlowPipeline,
     "./islands/DecodeText.tsx": $DecodeText,
     "./islands/FloatingWidgets.tsx": $FloatingWidgets,
@@ -85,6 +148,7 @@ const manifest = {
     "./islands/HeroAnimations.tsx": $HeroAnimations,
     "./islands/HeroPointerField.tsx": $HeroPointerField,
     "./islands/ImageSlider.tsx": $ImageSlider,
+    "./islands/LoginError.tsx": $LoginError,
     "./islands/MagneticButton.tsx": $MagneticButton,
     "./islands/MagneticCard.tsx": $MagneticCard,
     "./islands/MetricCard.tsx": $MetricCard,
@@ -93,7 +157,10 @@ const manifest = {
     "./islands/OrbitingNodes.tsx": $OrbitingNodes,
     "./islands/ParticleField.tsx": $ParticleField,
     "./islands/PixelRobot.tsx": $PixelRobot,
+    "./islands/ProcessMapper.tsx": $ProcessMapper,
+    "./islands/ProcessMapperWrapper.tsx": $ProcessMapperWrapper,
     "./islands/ProcessNode.tsx": $ProcessNode,
+    "./islands/ProfileForm.tsx": $ProfileForm,
     "./islands/SalesforceGraph.tsx": $SalesforceGraph,
     "./islands/ScrollReveal.tsx": $ScrollReveal,
     "./islands/StaggeredGrid.tsx": $StaggeredGrid,

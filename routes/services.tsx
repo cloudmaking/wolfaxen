@@ -35,8 +35,8 @@ export default function Services() {
             What We Do
           </h1>
           <p class="text-xl text-warm-beige/60 max-w-2xl mx-auto">
-            We don't sell hours—we build foundations. Every engagement maps your
-            current reality and rebuilds it into something scalable.
+            We don't sell hours. We build systems. We map your reality and
+            rebuild it for scale.
           </p>
         </ScrollReveal>
       </div>
@@ -54,9 +54,9 @@ export default function Services() {
                   Process Mapping & Workflow Design
                 </h2>
                 <p class="text-warm-beige/70 mb-8 leading-relaxed text-lg">
-                  We analyse how your business currently works — every step,
-                  every dependency — and turn it into a structured, visual
-                  system you can actually understand and improve.
+                  We see how your business actually works—every step, every
+                  bottleneck. Then we turn it into a visual system you can
+                  actually use.
                 </p>
                 <h3 class="text-xl font-bold text-light-gold mb-4">
                   Deliverables:
@@ -66,7 +66,7 @@ export default function Services() {
                     <ProcessNode /> End-to-end process maps
                   </div>
                   <div class="flex items-center gap-4 text-warm-beige/80">
-                    <ProcessNode /> Efficiency audit (identifying bottlenecks)
+                    <ProcessNode /> Efficiency audit (finding the waste)
                   </div>
                   <div class="flex items-center gap-4 text-warm-beige/80">
                     <ProcessNode /> Standard Operating Procedures (SOPs)
@@ -110,9 +110,8 @@ export default function Services() {
                   Automation & Systems Engineering
                 </h2>
                 <p class="text-warm-beige/70 mb-8 leading-relaxed text-lg">
-                  We connect your disparate tools (CRM, Email, Project
-                  Management) so data flows automatically. No more copy-pasting.
-                  No more "I forgot to update the sheet".
+                  We connect your tools. Data flows automatically. No more
+                  copy-pasting. No more "I forgot".
                 </p>
                 <h3 class="text-xl font-bold text-light-gold mb-4">
                   Common Use Cases:
@@ -153,9 +152,8 @@ export default function Services() {
                   AI Solutions
                 </h2>
                 <p class="text-warm-beige/70 mb-8 leading-relaxed text-lg">
-                  Practical AI, not hype. We build custom agents that can read
-                  documents, answer customer queries, or draft content based on
-                  your specific knowledge base.
+                  Real AI. No hype. We build agents that read your docs, answer
+                  your customers, and do the work.
                 </p>
                 <h3 class="text-xl font-bold text-light-gold mb-4">
                   Capabilities:
@@ -213,8 +211,8 @@ export default function Services() {
                   Systems Integration
                 </h2>
                 <p class="text-warm-beige/70 mb-8 leading-relaxed text-lg">
-                  We connect the platforms you already rely on—CRM, finance,
-                  project tools—so data is in sync without swivel-chair moves.
+                  We link your platforms. CRM, finance, projects. Everything in
+                  sync. No more double entry.
                 </p>
                 <h3 class="text-xl font-bold text-light-gold mb-4">
                   Typical Use Cases:
@@ -276,8 +274,8 @@ export default function Services() {
                 Web Development & Hosting
               </h2>
               <p class="text-warm-beige/70 mb-8 leading-relaxed text-lg">
-                Lean, modern web applications built for actual business needs.
-                Clean. Fast. Easy to extend.
+                Modern web apps for real business needs. Fast. Clean. Built to
+                last.
               </p>
               <h3 class="text-xl font-bold text-light-gold mb-4">
                 Tech Stack:
@@ -307,17 +305,69 @@ export default function Services() {
         </div>
       </section>
 
+      {/* System Administration */}
+      <section
+        id="sysadmin"
+        class="py-20 border-t border-white/5 relative z-10"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center md:flex-row-reverse">
+              <div class="order-2 md:order-1 relative h-[400px] bg-black/40 rounded-3xl border border-white/10 overflow-hidden backdrop-blur-sm">
+                <div class="absolute inset-0 bg-gradient-to-bl from-muted-gold/10 to-transparent">
+                </div>
+                {/* Reusing CircuitBoard or similar tech visual */}
+                <div class="absolute inset-0 opacity-50">
+                  <DataFlowPipeline />
+                </div>
+              </div>
+              <div class="order-1 md:order-2">
+                <div class="w-16 h-16 bg-muted-gold/20 rounded-2xl flex items-center justify-center mb-8 border border-muted-gold/30">
+                  <span class="text-3xl">🛡️</span>
+                </div>
+                <h2 class="text-3xl font-display font-bold text-warm-beige mb-6">
+                  System Administration
+                </h2>
+                <p class="text-warm-beige/70 mb-8 leading-relaxed text-lg">
+                  We manage your devices and security. You don't have to worry
+                  about it.
+                </p>
+                <h3 class="text-xl font-bold text-light-gold mb-4">
+                  We Handle:
+                </h3>
+                <StaggeredGrid className="space-y-4 mb-10">
+                  <div class="flex items-center gap-4 text-warm-beige/80">
+                    <ProcessNode /> Device Management (MDM / Intune)
+                  </div>
+                  <div class="flex items-center gap-4 text-warm-beige/80">
+                    <ProcessNode /> User Onboarding & Offboarding
+                  </div>
+                  <div class="flex items-center gap-4 text-warm-beige/80">
+                    <ProcessNode /> Security & Compliance Audits
+                  </div>
+                </StaggeredGrid>
+                <AnimatedButton
+                  href="/services/system-administration"
+                  variant="outline"
+                >
+                  View Details
+                </AnimatedButton>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Fun Robot Section */}
       <section class="py-20 border-t border-white/5 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div class="text-center mb-12">
               <h2 class="text-3xl font-display font-bold text-warm-beige mb-4">
-                Meet Your New Digital Assistant
+                Meet your new assistant
               </h2>
               <p class="text-warm-beige/60 max-w-xl mx-auto">
-                Our AI-powered systems work tirelessly to keep your business
-                running smoothly.
+                Our systems work 24/7 to keep your business running.
               </p>
             </div>
             <div class="relative h-[300px] bg-black/40 rounded-3xl border border-white/10 overflow-hidden backdrop-blur-sm max-w-md mx-auto">

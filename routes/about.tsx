@@ -6,18 +6,15 @@ import StaggeredGrid from "../islands/StaggeredGrid.tsx";
 const HIGHLIGHTS = [
   {
     title: "Hands-on delivery",
-    copy:
-      "Every engagement runs directly through Ali—no anonymous delivery team or hand-offs.",
+    copy: "You work with Ali. No middle managers. No hand-offs.",
   },
   {
     title: "Open systems",
-    copy:
-      "Process maps, automations, and AI are delivered with documentation and zero lock-in.",
+    copy: "We give you the keys. Documentation, code, everything. No lock-in.",
   },
   {
     title: "Proof-first",
-    copy:
-      "Engagements centre around measurable process wins: clearer ownership, less manual effort.",
+    copy: "We focus on one thing: measurable wins. Less work, more ownership.",
   },
 ];
 
@@ -25,17 +22,16 @@ const PHILOSOPHY_POINTS = [
   {
     heading: "Own every component",
     copy:
-      "Architecture diagrams, SOPs, and repo access are standard. If we build it, you can maintain it.",
+      "You get the blueprints. Diagrams, SOPs, repo access. If we build it, you can run it.",
   },
   {
     heading: "Solve the right problem",
-    copy:
-      "Discovery starts by mapping the current reality so automation reinforces good practice instead of masking chaos.",
+    copy: "We map reality first. Automation should fix chaos, not hide it.",
   },
   {
     heading: "Ship fast, document faster",
     copy:
-      "Short build cycles paired with loom walk-throughs and admin handovers so teams run without babysitting.",
+      "Fast builds. Video guides. Complete handovers. Your team runs it without us.",
   },
 ];
 
@@ -53,15 +49,14 @@ export default function About() {
         <ScrollReveal>
           <div class="text-center max-w-4xl mx-auto">
             <p class="text-sm uppercase tracking-[0.4em] text-muted-gold mb-5">
-              Built on engineering, integrity, and transparency
+              Built on engineering, integrity and transparency
             </p>
             <h1 class="text-4xl md:text-6xl font-display font-bold text-warm-beige mb-6 leading-tight relative">
-              Systems that companies can understand, trust, and operate.
+              Systems you can actually understand.
             </h1>
             <p class="text-lg md:text-xl text-warm-beige/70 leading-relaxed">
-              Wolfaxen is a lean systems practice led by Ali Raza. We map,
-              automate, and instrument operations for leaders who are tired of
-              duct-tape processes and shadow IT.
+              Wolfaxen is a systems practice led by Ali Raza. We fix operations
+              for leaders tired of duct-tape solutions.
             </p>
           </div>
         </ScrollReveal>
@@ -105,12 +100,11 @@ export default function About() {
                 Philosophy
               </p>
               <h3 class="text-3xl font-display font-bold text-warm-beige mb-6">
-                A builder’s perspective, not an agency wrapper.
+                A builder, not an agency.
               </h3>
               <p class="text-warm-beige/80 text-lg leading-relaxed mb-8">
-                When you hire Wolfaxen you work directly with the engineer who
-                scopes, builds, automates, and documents the system. No layers,
-                no vague account updates.
+                You hire the engineer, not the sales guy. I scope it, I build
+                it, I document it.
               </p>
               <div class="space-y-6">
                 {PHILOSOPHY_POINTS.map((point) => (
@@ -165,8 +159,7 @@ export default function About() {
                         <strong class="text-muted-gold not-italic">
                           Transparency Note:
                         </strong>{" "}
-                        Wolfaxen is currently a one-person operation. When you
-                        hire Wolfaxen, you hire Ali directly—full attention,
+                        Wolfaxen is just me, Ali. You get my full attention and
                         full accountability.
                       </p>
                     </div>
@@ -175,6 +168,181 @@ export default function About() {
               </div>
             </MagneticCard>
           </ScrollReveal>
+        </div>
+
+        <div class="pt-20">
+          <ScrollReveal>
+            <div class="text-center mb-16">
+              <p class="text-sm uppercase tracking-[0.4em] text-muted-gold mb-4">
+                Track Record
+              </p>
+              <h2 class="text-3xl md:text-5xl font-display font-bold text-warm-beige mb-6">
+                Recent Case Studies
+              </h2>
+              <p class="text-xl text-warm-beige/70 max-w-3xl mx-auto">
+                Real results. Real projects.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                category: "IT Infrastructure Project",
+                title:
+                  "Microsoft Intune Autopilot Rollout & Device Modernisation",
+                subtitle: "Modern Endpoint Management & Compliance Overhaul",
+                description:
+                  "We moved 500+ unmanaged laptops to a modern, secure setup using Microsoft Intune. New devices now ship directly to staff, turn on, and set themselves up. No manual work required.",
+                result:
+                  "Near-zero onboarding time, Cyber Essentials compliance, and a fully standardised IT estate.",
+                tags: [
+                  "Intune",
+                  "Autopilot",
+                  "IT Infrastructure",
+                  "Compliance",
+                ],
+                accent: "muted-gold",
+                border: "hover:border-muted-gold/30",
+                bgGradient: "from-muted-gold/5",
+              },
+              {
+                category: "Salesforce Project",
+                title: "Salesforce Automation Audit & Flow Migration",
+                subtitle: "Legacy Workflow Cleanup & Modern Flow Architecture",
+                description:
+                  "We cleaned up the client’s Salesforce setup. We killed the useless rules and moved everything to modern Flows. It's faster, cleaner, and easier to manage.",
+                result:
+                  "Faster platform performance and a cleaner, future-proof automation layer.",
+                tags: [
+                  "Salesforce",
+                  "Automation",
+                  "Flow Builder",
+                  "Org Optimisation",
+                ],
+                accent: "deep-olive",
+                border: "hover:border-deep-olive/30",
+                bgGradient: "from-deep-olive/5",
+              },
+              {
+                category: "System Integration",
+                title: "Custom Payment Link Generator (Salesforce Integration)",
+                subtitle: "Real-Time Payment Links Directly Inside Salesforce",
+                description:
+                  "We built a button in Salesforce. One click generates a secure payment link. Staff love it, and it saves hours of admin.",
+                result:
+                  "Faster payment turnaround and a measurable reduction in admin time.",
+                tags: [
+                  "Salesforce",
+                  "API Integration",
+                  "Payments",
+                  "Automation",
+                ],
+                accent: "oxide-red",
+                border: "hover:border-oxide-red/30",
+                bgGradient: "from-oxide-red/5",
+              },
+              {
+                category: "Communications Automation",
+                title: "Automated Client Service Emails",
+                subtitle: "Intelligent Customer Assignment & Welcome Emails",
+                description:
+                  "We built a system that automatically picks the best agent for each booking and introduces them to the client. No more manual emails.",
+                result:
+                  "Fully automated client introductions and significant workload reduction for the service team.",
+                tags: ["Email Automation", "Salesforce", "Efficiency"],
+                accent: "light-gold",
+                border: "hover:border-light-gold/30",
+                bgGradient: "from-light-gold/5",
+              },
+              {
+                category: "AI & Automation Project",
+                title: "AI Voice Chatbot for 24/7 Lead Handling",
+                subtitle:
+                  "Always-Available Customer Engagement & Automated Booking Intake",
+                description:
+                  "We replaced a 9-5 live chat with a 24/7 AI voice bot. It talks to customers, understands what they need, and books the lead. It just works.",
+                result:
+                  "A fully autonomous, 24/7 enquiry-capturing assistant that increased qualified leads, removed dependency on live agents, and provided customers with immediate, accurate responses at any time.",
+                tags: [
+                  "AI",
+                  "Automation",
+                  "Voice Chatbot",
+                  "Lead Handling",
+                  "Customer Experience",
+                ],
+                accent: "muted-gold",
+                border: "hover:border-muted-gold/30",
+                bgGradient: "from-muted-gold/5",
+              },
+              {
+                category: "Web Tools & Automation",
+                title:
+                  "Lightweight CMS for Book Catalogue & Dynamic QR Pricing",
+                subtitle:
+                  "Custom Micro-CMS Built on Google Sheets for Instant Price Updates",
+                description:
+                  "We built a simple system where the client manages book prices in a Google Sheet. The website updates instantly. Simple, effective, and zero maintenance.",
+                result:
+                  "Instant price updates, simplified content management, and a flexible, long-lasting system powered entirely by a Google Sheet.",
+                tags: [
+                  "CMS",
+                  "Automation",
+                  "Low-Code",
+                  "Web Tools",
+                  "Google Sheets Integration",
+                ],
+                accent: "deep-olive",
+                border: "hover:border-deep-olive/30",
+                bgGradient: "from-deep-olive/5",
+              },
+            ].map((study, index) => (
+              <ScrollReveal key={index}>
+                <div
+                  class={`group relative bg-white/5 rounded-2xl overflow-hidden border border-white/10 ${study.border} transition-all duration-500 h-full flex flex-col`}
+                >
+                  <div
+                    class={`absolute inset-0 bg-gradient-to-br ${study.bgGradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                  >
+                  </div>
+                  <div class="p-8 relative z-10 flex flex-col h-full">
+                    <div
+                      class={`text-sm text-${study.accent} font-bold uppercase tracking-wider mb-2`}
+                    >
+                      {study.category}
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-2 text-warm-beige group-hover:text-light-gold transition-colors">
+                      {study.title}
+                    </h3>
+                    <h4 class="text-lg text-warm-beige/80 mb-4 font-medium">
+                      {study.subtitle}
+                    </h4>
+                    <p class="text-warm-beige/70 mb-6 leading-relaxed flex-grow">
+                      {study.description}
+                    </p>
+                    <div class="mb-6 p-4 bg-black/20 rounded-lg border border-white/5">
+                      <span class="text-sm font-bold text-muted-gold block mb-1">
+                        Result:
+                      </span>
+                      <span class="text-sm text-warm-beige/90">
+                        {study.result}
+                      </span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                      {study.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          class="px-3 py-1 bg-black/30 rounded-full text-xs border border-white/10 text-warm-beige/60"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </div>
     </div>

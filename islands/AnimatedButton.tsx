@@ -5,6 +5,7 @@ import { JSX } from "preact";
 interface AnimatedButtonProps extends JSX.HTMLAttributes<HTMLAnchorElement> {
   variant?: "primary" | "secondary" | "outline";
   href?: string;
+  disabled?: boolean;
 }
 
 export default function AnimatedButton(props: AnimatedButtonProps) {
@@ -37,6 +38,20 @@ export default function AnimatedButton(props: AnimatedButtonProps) {
     secondary: "bg-deep-olive text-warm-beige hover:bg-deep-olive/80",
     outline: "border border-muted-gold text-muted-gold hover:text-light-gold",
   };
+
+  if (props.disabled) {
+    return (
+      <button
+        {...(rest as any)}
+        disabled={true}
+        class={`${baseStyles} ${
+          variants[variant]
+        } ${className} opacity-50 cursor-not-allowed`}
+      >
+        <span class="relative z-10">{children}</span>
+      </button>
+    );
+  }
 
   return (
     <a

@@ -14,7 +14,7 @@ const PROJECT_RANGES = [
   {
     title: "Process Mapping",
     price: "£350 – £1,200",
-    description: "End-to-end mapping, efficiency analysis, and blueprinting.",
+    description: "We map it, find the waste, and show you how to fix it.",
     icon: "🗺️",
     accent: "bg-muted-gold/10 group-hover:bg-muted-gold/20",
     border: "hover:border-muted-gold/40",
@@ -22,7 +22,7 @@ const PROJECT_RANGES = [
   {
     title: "Automation Setup",
     price: "£500 – £4,000",
-    description: "Zapier/n8n flows, API integrations, and background workers.",
+    description: "We connect your apps and automate the grunt work.",
     icon: "⚡",
     accent: "bg-deep-olive/10 group-hover:bg-deep-olive/20",
     border: "hover:border-deep-olive/40",
@@ -31,7 +31,7 @@ const PROJECT_RANGES = [
     title: "AI Chatbot (RAG)",
     price: "£700 – £3,000",
     description:
-      "Custom chatbots trained on your data. No monthly token markups.",
+      "Chatbots that know your business. Trained on your actual data.",
     icon: "🤖",
     accent: "bg-oxide-red/10 group-hover:bg-oxide-red/20",
     border: "hover:border-oxide-red/40",
@@ -39,7 +39,7 @@ const PROJECT_RANGES = [
   {
     title: "Systems Integration",
     price: "£800 – £5,000",
-    description: "Connecting CRMs, payment gateways, and internal tools.",
+    description: "Making your tools talk to each other. Properly.",
     icon: "🔗",
     accent: "bg-muted-gold/10 group-hover:bg-muted-gold/20",
     border: "hover:border-muted-gold/40",
@@ -47,7 +47,7 @@ const PROJECT_RANGES = [
   {
     title: "Custom Web App",
     price: "£1,000 – £8,000",
-    description: "Modern, fast web applications built on Deno/Fresh.",
+    description: "Fast, simple web apps that actually solve your problem.",
     icon: "💻",
     accent: "bg-deep-olive/10 group-hover:bg-deep-olive/20",
     border: "hover:border-deep-olive/40",
@@ -55,7 +55,7 @@ const PROJECT_RANGES = [
   {
     title: "Migrations",
     price: "£800 – £6,000",
-    description: "Workspace data migrations (Google, Microsoft, etc.).",
+    description: "Moving your data to the cloud. Safely.",
     icon: "📦",
     accent: "bg-oxide-red/10 group-hover:bg-oxide-red/20",
     border: "hover:border-oxide-red/40",
@@ -84,21 +84,21 @@ export default function Pricing() {
         <ScrollReveal>
           <div class="inline-block mb-6 px-4 py-1.5 rounded-full border border-muted-gold/30 bg-muted-gold/10 backdrop-blur-md">
             <span class="text-muted-gold text-sm font-medium tracking-wider uppercase">
-              Transparent Pricing • No Hidden Fees
+              Transparent Pricing. No nonsense.
             </span>
           </div>
           <div class="mb-8">
             <DecodeText
-              text="Pricing Overview"
+              text="Pricing"
               scramble
               className="text-4xl md:text-6xl font-display font-bold text-warm-beige block"
             />
           </div>
           <p class="text-xl text-warm-beige/60 max-w-2xl mx-auto">
-            Wolfaxen works on project-based quotes, tailored to your needs.
+            Wolfaxen works on project-based quotes.
             <br />
             <span class="text-muted-gold">
-              No long-term commitments, no forced subscriptions.
+              I quote per project. You pay for the result. No lock-in.
             </span>
           </p>
         </ScrollReveal>
@@ -153,7 +153,7 @@ export default function Pricing() {
         <div class="mb-24">
           <ScrollReveal>
             <h2 class="text-2xl font-display font-bold text-warm-beige mb-10 text-center">
-              Optional Retainers
+              Optional Support
             </h2>
           </ScrollReveal>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -167,7 +167,7 @@ export default function Pricing() {
                   <div class="relative z-10 h-full flex flex-col">
                     <div class="mb-4">
                       <h3 class="text-xl font-bold text-warm-beige">
-                        Basic Retainer
+                        Basic
                       </h3>
                       <p class="text-3xl font-bold text-white mt-4">
                         £150<span class="text-sm text-warm-beige/50 font-normal">
@@ -211,7 +211,7 @@ export default function Pricing() {
                     <div class="relative z-10 h-full flex flex-col">
                       <div class="mb-4">
                         <h3 class="text-xl font-bold text-warm-beige">
-                          Growth Retainer
+                          Growth
                         </h3>
                         <p class="text-3xl font-bold text-white mt-4">
                           £350<span class="text-sm text-warm-beige/50 font-normal">
@@ -253,7 +253,7 @@ export default function Pricing() {
                   <div class="relative z-10 h-full flex flex-col">
                     <div class="mb-4">
                       <h3 class="text-xl font-bold text-warm-beige">
-                        Technical Partner
+                        Partner
                       </h3>
                       <p class="text-3xl font-bold text-white mt-4">
                         £650+<span class="text-sm text-warm-beige/50 font-normal">
@@ -280,7 +280,7 @@ export default function Pricing() {
                       variant="outline"
                       className="w-full"
                     >
-                      Contact Us
+                      Contact me
                     </MagneticButton>
                   </div>
                 </div>
@@ -302,7 +302,7 @@ export default function Pricing() {
                 Our Pricing Philosophy
               </h3>
               <p class="text-xl text-warm-beige/80 max-w-3xl mx-auto mb-12">
-                Fair, transparent, quote-based, and never exploitative.
+                Fair. Clear. You pay for what you get.
               </p>
             </div>
           </ScrollReveal>
@@ -316,8 +316,7 @@ export default function Pricing() {
                 </div>
                 <h4 class="text-muted-gold font-bold mb-3">No Lock-in</h4>
                 <p class="text-warm-beige/60 text-sm leading-relaxed">
-                  You own everything we build. We don't hold your data or
-                  systems hostage.
+                  You own the code. You own the data. It's yours.
                 </p>
               </div>
             </MagneticCard>
@@ -328,8 +327,7 @@ export default function Pricing() {
                 </div>
                 <h4 class="text-muted-gold font-bold mb-3">No Hidden Fees</h4>
                 <p class="text-warm-beige/60 text-sm leading-relaxed">
-                  What we quote is what you pay. No surprise "enterprise"
-                  charges.
+                  The price is the price. No surprise fees.
                 </p>
               </div>
             </MagneticCard>
@@ -339,11 +337,10 @@ export default function Pricing() {
                   <span class="text-2xl">🎯</span>
                 </div>
                 <h4 class="text-muted-gold font-bold mb-3">
-                  Optional Retainers
+                  Optional Support
                 </h4>
                 <p class="text-warm-beige/60 text-sm leading-relaxed">
-                  You only pay for what you need. Ongoing support is completely
-                  optional.
+                  Pay for what you need. Support is up to you.
                 </p>
               </div>
             </MagneticCard>

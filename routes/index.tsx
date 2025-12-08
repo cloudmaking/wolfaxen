@@ -8,33 +8,78 @@ import CircuitBoard from "../islands/CircuitBoard.tsx";
 import OrbitingNodes from "../islands/OrbitingNodes.tsx";
 import ProcessNode from "../islands/ProcessNode.tsx";
 import MagneticCard from "../islands/MagneticCard.tsx";
-import VoiceAssistant from "../islands/VoiceAssistant.tsx";
+import ChatAssistant from "../islands/ChatAssistant.tsx";
 import Sheen from "../components/Sheen.tsx";
 
-const SERVICE_CARDS = [
+const BENEFIT_CARDS = [
   {
-    title: "Process Mapping",
+    title: "Stop paying for busywork",
     copy:
-      "Visualise the entire operation, spot bottlenecks, and rebuild flows with clear ownership.",
-    icon: "🗺️",
+      "Don't pay a human to do robot work. We automate the boring stuff so your team can do the real work.",
+    icon: "💸",
     accent: "bg-muted-gold/10 group-hover:bg-muted-gold/20",
     border: "hover:border-muted-gold/30",
   },
   {
-    title: "Automation",
+    title: "Remove human error",
     copy:
-      "Connect SaaS tools and APIs so data moves without duct tape or endless Zapier hacks.",
-    icon: "⚡",
+      "Manual processes break. Code doesn't. Get consistency in your data, onboarding and reporting.",
+    icon: "🎯",
     accent: "bg-deep-olive/20 group-hover:bg-deep-olive/30",
     border: "hover:border-deep-olive/40",
   },
   {
-    title: "AI Solutions",
+    title: "Grow without hiring",
     copy:
-      "Deploy practical AI agents for support, ops, and enablement on top of your own knowledge.",
-    icon: "🤖",
+      "Handle 10x the volume without adding headcount. Your systems should grow with you, not slow you down.",
+    icon: "📈",
     accent: "bg-oxide-red/20 group-hover:bg-oxide-red/30",
     border: "hover:border-oxide-red/40",
+  },
+  {
+    title: "See the full picture",
+    copy:
+      "You can't fix what you can't see. Our Process Mapper visualizes your entire workflow to spot hidden bottlenecks.",
+    icon: "🗺️",
+    accent: "bg-light-gold/10 group-hover:bg-light-gold/20",
+    border: "hover:border-light-gold/30",
+  },
+  {
+    title: "Own your data",
+    copy:
+      "Stop relying on scattered spreadsheets. We build unified systems where your data is secure and accessible.",
+    icon: "🔒",
+    accent: "bg-warm-beige/10 group-hover:bg-warm-beige/20",
+    border: "hover:border-warm-beige/30",
+  },
+];
+
+const SERVICES_LIST = [
+  {
+    title: "AI Agents & Automations",
+    desc: "Custom chatbots, assistants, lead handlers, workflow automations.",
+  },
+  {
+    title: "Process Mapping & Optimisation",
+    desc: "AI-assisted mapping, bottleneck detection, performance insights.",
+  },
+  {
+    title: "Systems & Infrastructure Administration",
+    desc:
+      "Device management, cloud infrastructure, compliance, onboarding flows.",
+  },
+  {
+    title: "System Integrations & Migrations",
+    desc: "Salesforce, payment platforms, booking systems, internal tools.",
+  },
+  {
+    title: "Custom Web Tools & Internal Apps",
+    desc:
+      "Tailored systems for your operations, built quickly on modern frameworks.",
+  },
+  {
+    title: "Consulting & Technical Strategy",
+    desc: "Technical direction, architecture planning, and solution design.",
   },
 ];
 
@@ -62,8 +107,7 @@ export default function Home() {
           <ScrollReveal>
             <div class="inline-block mb-6 px-4 py-1.5 rounded-full border border-muted-gold/30 bg-muted-gold/10 backdrop-blur-md">
               <span class="text-muted-gold text-sm font-medium tracking-wider uppercase">
-                AI Automation Consultancy • Process Optimisation • Systems
-                Integration
+                AI • Process • Systems
               </span>
             </div>
             <div class="mb-8">
@@ -71,39 +115,69 @@ export default function Home() {
                 Wolfaxen - AI Automation and Process Optimisation Consultancy
               </h1>
               <span class="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-tight text-warm-beige block animate-fade-in">
-                Wolfaxen is an AI Automation
-              </span>
-              <span class="block text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-muted-gold via-light-gold to-muted-gold animate-gradient-x">
-                & Process Consultancy
+                Stop doing work <br />
+                a robot could do.
               </span>
               <p class="text-xl md:text-2xl text-warm-beige/80 max-w-3xl mx-auto mt-8 leading-relaxed block animate-fade-in delay-100">
-                We build custom AI chatbots, integrate business systems, and
-                automate workflows.
+                We map your workflow. We find the waste. We build the
+                automations to fix it.
               </p>
             </div>
-            <p class="text-lg md:text-xl text-warm-beige/60 max-w-2xl mx-auto mb-12 leading-relaxed">
-              Stop drowning in admin. We map processes end-to-end and build
-              software that gives you your time back.
-              <span class="block mt-2 text-muted-gold">
-                No bloat. No agencies. Just code that works.
-              </span>
-            </p>
-            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <AnimatedButton href="/contactus" variant="primary">
-                Book a Discovery Call
+
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12">
+              <AnimatedButton disabled variant="primary">
+                Map your process (Coming Soon)
               </AnimatedButton>
-              <AnimatedButton href="/services" variant="outline">
-                View Services
+              <AnimatedButton href="/contactus" variant="outline">
+                Book a consultation
               </AnimatedButton>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
+      {/* Process Mapper CTA Section */}
+      <section class="py-24 bg-white/5 relative overflow-hidden border-y border-white/10">
+        <div class="absolute inset-0 bg-gradient-to-r from-indigo-900/20 to-purple-900/20 pointer-events-none">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <h2 class="text-3xl lg:text-5xl font-display font-bold text-warm-beige mb-6">
+            Where are you burning cash?
+          </h2>
+          <p class="text-xl text-warm-beige/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Tell us how you work. We'll map it. You'll see the waste.
+          </p>
+
+          <div class="bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl p-8 max-w-3xl mx-auto mb-10">
+            <div class="flex flex-col md:flex-row gap-4 items-center">
+              <div class="flex-1 text-left">
+                <div class="text-sm text-gray-400 mb-2">Example Input:</div>
+                <div class="font-mono text-indigo-300 bg-indigo-900/20 p-3 rounded border border-indigo-500/30">
+                  "When a lead comes in from the website, I copy it to Excel,
+                  then I email them manually..."
+                </div>
+              </div>
+              <div class="hidden md:block text-2xl text-gray-500">→</div>
+              <div class="flex-1 text-left">
+                <div class="text-sm text-gray-400 mb-2">We Generate:</div>
+                <div class="flex items-center gap-2 text-green-400 bg-green-900/20 p-3 rounded border border-green-500/30">
+                  <span class="text-xl">🗺️</span> Visual Map +{" "}
+                  <span class="font-bold">Automation Plan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <AnimatedButton disabled variant="primary">
+            Start Mapping Now (Coming Soon)
+          </AnimatedButton>
+        </div>
+      </section>
+
       {/* AI Voice Interface Section */}
       <section
         id="consultant"
-        class="py-24 bg-white/5 relative overflow-hidden"
+        class="py-24 relative overflow-hidden"
       >
         <div class="absolute inset-0 bg-gradient-to-b from-oreo-black via-deep-olive/5 to-oreo-black pointer-events-none">
         </div>
@@ -111,13 +185,11 @@ export default function Home() {
           <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 class="text-3xl lg:text-4xl font-display font-bold text-warm-beige mb-6">
-                Tell us about your process challenges.
+                Tell us about your growing pains.
               </h2>
               <p class="text-lg text-warm-beige/60 mb-8 leading-relaxed">
-                Skip the long forms. Our AI consultant, Flow, is ready to
-                interview you. It will analyze your spoken responses to
-                understand your operational structure and bottlenecks
-                immediately.
+                No long forms. Just chat with Flow, our AI. It'll analyze your
+                bottlenecks, and start mapping a solution.
               </p>
 
               <div class="space-y-6">
@@ -141,8 +213,7 @@ export default function Home() {
                       Natural Conversation
                     </h4>
                     <p class="text-warm-beige/60">
-                      Speak naturally as if you were talking to a human
-                      consultant.
+                      Chat naturally. Just like messaging a human consultant.
                     </p>
                   </div>
                 </div>
@@ -167,7 +238,7 @@ export default function Home() {
                       Instant Capture
                     </h4>
                     <p class="text-warm-beige/60">
-                      The AI automatically structures your inputs into a formal
+                      The AI automatically turns your inputs into a formal
                       inquiry.
                     </p>
                   </div>
@@ -176,7 +247,7 @@ export default function Home() {
             </div>
 
             <div class="relative">
-              <VoiceAssistant />
+              <ChatAssistant />
               <div class="absolute -inset-4 bg-gradient-to-r from-muted-gold/20 to-deep-olive/20 rounded-3xl opacity-30 blur-xl -z-10">
               </div>
             </div>
@@ -184,7 +255,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Overview (What We Do) */}
+      {/* Benefits Section (What We Solve) */}
       <section class="py-32 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-oreo-black via-deep-olive/5 to-oreo-black">
         </div>
@@ -192,16 +263,15 @@ export default function Home() {
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-20">
             <h2 class="text-3xl md:text-4xl font-display font-bold text-warm-beige mb-6">
-              What We Build
+              What We Solve
             </h2>
             <p class="text-warm-beige/60 max-w-2xl mx-auto text-lg">
-              Replace manual spreadsheets and disjointed tools with unified
-              systems.
+              We don't just build software. We solve problems.
             </p>
           </div>
 
-          <StaggeredGrid className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {SERVICE_CARDS.map((card) => (
+          <StaggeredGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+            {BENEFIT_CARDS.map((card) => (
               <MagneticCard key={card.title} intensity={15}>
                 <div
                   class={`h-full group p-8 rounded-2xl bg-white/5 border border-white/10 ${card.border} transition-all duration-500 hover:shadow-[0_20px_40px_-20px_rgba(185,176,123,0.2)] relative overflow-hidden`}
@@ -235,7 +305,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How We Work Section */}
+      {/* How Wolfaxen Works Section */}
       <section class="py-32 relative overflow-hidden bg-white/[0.02]">
         <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent">
         </div>
@@ -251,14 +321,11 @@ export default function Home() {
           <ScrollReveal>
             <div class="text-center mb-20">
               <h2 class="text-3xl md:text-5xl font-display font-bold text-warm-beige mb-6">
-                How We Work
+                How Wolfaxen Works
               </h2>
-              <p class="text-warm-beige/60 max-w-2xl mx-auto text-lg">
-                A clear, proven process that turns chaos into clarity
-              </p>
             </div>
           </ScrollReveal>
-          <StaggeredGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggeredGrid className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Step 1 */}
             <div class="group relative p-6 rounded-2xl border border-white/10 bg-oreo-black/50 backdrop-blur-sm h-full hover:border-muted-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(185,176,123,0.2)] overflow-hidden">
               <div class="absolute inset-0 bg-gradient-to-br from-muted-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -271,12 +338,11 @@ export default function Home() {
                   <ProcessNode />
                 </div>
                 <h3 class="text-xl font-bold text-light-gold mb-4 group-hover:text-muted-gold transition-colors">
-                  Understanding
+                  We map it
                 </h3>
                 <p class="text-warm-beige/70 text-sm leading-relaxed group-hover:text-warm-beige/90 transition-colors">
-                  We map your existing processes, gather requirements, and
-                  identify whether the goal is efficiency, automation, or a full
-                  rebuild.
+                  Use our AI process mapper to see how work actually flows in
+                  your business.
                 </p>
               </div>
             </div>
@@ -293,11 +359,11 @@ export default function Home() {
                   <ProcessNode />
                 </div>
                 <h3 class="text-xl font-bold text-light-gold mb-4 group-hover:text-muted-gold transition-colors">
-                  Designing
+                  We find the gaps
                 </h3>
                 <p class="text-warm-beige/70 text-sm leading-relaxed group-hover:text-warm-beige/90 transition-colors">
-                  We propose a solution architecture—selecting the right tools
-                  (No-Code vs Code) and designing the data flow.
+                  We analyse your map and highlight where automation or
+                  integration will have the biggest impact.
                 </p>
               </div>
             </div>
@@ -314,36 +380,69 @@ export default function Home() {
                   <ProcessNode />
                 </div>
                 <h3 class="text-xl font-bold text-light-gold mb-4 group-hover:text-muted-gold transition-colors">
-                  Building
+                  We build the fix
                 </h3>
                 <p class="text-warm-beige/70 text-sm leading-relaxed group-hover:text-warm-beige/90 transition-colors">
-                  We implement the system, connect the APIs, build the
-                  automations, and test rigorously.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 4 */}
-            <div class="group relative p-6 rounded-2xl border border-white/10 bg-oreo-black/50 backdrop-blur-sm h-full hover:border-muted-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(185,176,123,0.2)] overflow-hidden">
-              <div class="absolute inset-0 bg-gradient-to-br from-muted-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              </div>
-              <div class="text-5xl font-bold text-white/5 absolute top-4 right-4 group-hover:text-white/10 transition-colors">
-                04
-              </div>
-              <div class="relative z-10">
-                <div class="w-10 h-10 bg-muted-gold/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <ProcessNode />
-                </div>
-                <h3 class="text-xl font-bold text-light-gold mb-4 group-hover:text-muted-gold transition-colors">
-                  Support
-                </h3>
-                <p class="text-warm-beige/70 text-sm leading-relaxed group-hover:text-warm-beige/90 transition-colors">
-                  We hand over the keys with full documentation, training, and a
-                  warranty period.
+                  From AI chatbots to workflow automations, we build exactly
+                  what your business needs.
                 </p>
               </div>
             </div>
           </StaggeredGrid>
+        </div>
+      </section>
+
+      {/* Services Overview */}
+      <section class="py-24 relative bg-black/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-warm-beige mb-6">
+              Services Overview
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICES_LIST.map((service, idx) => (
+              service.title === "Systems & Infrastructure Administration"
+                ? (
+                  <a
+                    key={idx}
+                    href="/services/system-administration"
+                    class="block p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors group"
+                  >
+                    <h3 class="text-lg font-bold text-muted-gold mb-2 group-hover:text-light-gold transition-colors">
+                      {service.title}
+                    </h3>
+                    <p class="text-warm-beige/60 text-sm">{service.desc}</p>
+                  </a>
+                )
+                : (
+                  <div
+                    key={idx}
+                    class="p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors"
+                  >
+                    <h3 class="text-lg font-bold text-muted-gold mb-2">
+                      {service.title}
+                    </h3>
+                    <p class="text-warm-beige/60 text-sm">{service.desc}</p>
+                  </div>
+                )
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signals Section */}
+      <section class="py-20 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-2xl md:text-3xl font-display font-bold text-warm-beige mb-8">
+            We build systems that save time.
+          </h2>
+          <p class="text-warm-beige/60 mb-12">
+            Here are some recent projects across IT, operations and automation.
+          </p>
+          <AnimatedButton href="/about" variant="outline">
+            View Case Studies
+          </AnimatedButton>
         </div>
       </section>
 
@@ -356,28 +455,24 @@ export default function Home() {
         </div>
         <div class="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="bg-black/60 border border-white/10 rounded-3xl px-8 py-12 text-center shadow-[0_30px_60px_-30px_rgba(0,0,0,0.8)] backdrop-blur-sm">
-            <p class="text-sm uppercase tracking-[0.4em] text-muted-gold mb-4">
-              Let's rebuild the way your team works
-            </p>
             <h2 class="text-3xl md:text-5xl font-display font-bold text-warm-beige mb-6">
-              Ready for a process audit?
+              Ready to stop the busywork?
             </h2>
             <p class="text-warm-beige/70 text-lg mb-10">
-              Show us what feels broken. We'll map it, fix it, and document
-              every part so you own the system going forward.
+              Book a free call — or speak to our AI assistant right now.
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
               <AnimatedButton
                 href="/contactus"
                 variant="primary"
               >
-                Start Your Inquiry
+                Book a free call
               </AnimatedButton>
               <AnimatedButton
-                href="/pricing"
+                href="#consultant"
                 variant="outline"
               >
-                See Pricing
+                Chat with AI Assistant
               </AnimatedButton>
             </div>
           </div>

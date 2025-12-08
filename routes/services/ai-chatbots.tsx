@@ -66,7 +66,7 @@ export default function AIChatbots() {
                   Customer Service
                 </h4>
                 <p class="text-sm text-warm-beige/60">
-                  Handle FAQs, order tracking, and troubleshooting instantly.
+                  Handle FAQs, order tracking and troubleshooting instantly.
                 </p>
               </div>
               <div class="p-4 border border-white/10 rounded-lg bg-black/20">
