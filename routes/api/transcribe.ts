@@ -2,8 +2,11 @@ import { Handlers } from "$fresh/server.ts";
 import { GoogleGenerativeAI } from "npm:@google/generative-ai";
 import { State } from "../../middleware/auth.ts";
 
-const apiKey = Deno.env.get("GEMINI_API_KEY") || "";
-const genAI = new GoogleGenerativeAI(apiKey);
+const apiKey = Deno.env.get("GEMINI_API_KEY");
+if (!apiKey) {
+  console.error("CRITICAL ERROR: Missing GEMINI_API_KEY environment variable.");
+}
+const genAI = new GoogleGenerativeAI(apiKey || "");
 
 const RATE_LIMIT_WINDOW_MS = 5 * 60_000;
 const MAX_REQUESTS = 10;
@@ -45,6 +48,13 @@ export const handler: Handlers<any, State> = {
         headers: rl.retryAfter
           ? { "Retry-After": String(rl.retryAfter) }
           : undefined,
+      });
+    }
+
+    if (!apiKey) {
+      console.error("Transcription failed: Missing GEMINI_API_KEY");
+      return new Response("Server Misconfiguration: Missing AI Credentials", {
+        status: 500,
       });
     }
 

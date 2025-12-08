@@ -38,9 +38,22 @@ export const authMiddleware: MiddlewareHandler<State> = async (req, ctx) => {
     (globalThis as unknown as { __supabaseCreateClient?: typeof createClient })
       .__supabaseCreateClient ?? createClient;
 
+  const supabaseUrl = Deno.env.get("SUPABASE_URL");
+  const supabaseKey = Deno.env.get("SUPABASE_ANON_KEY");
+
+  if (!supabaseUrl || !supabaseKey) {
+    console.error(
+      "CRITICAL ERROR: Missing SUPABASE_URL or SUPABASE_ANON_KEY environment variables.",
+    );
+    return new Response(
+      "Internal Configuration Error: Missing Database Credentials",
+      { status: 500 },
+    );
+  }
+
   const client = createClientFn(
-    Deno.env.get("SUPABASE_URL") || "",
-    Deno.env.get("SUPABASE_ANON_KEY") || "",
+    supabaseUrl,
+    supabaseKey,
     { auth: { persistSession: false } },
   );
 
